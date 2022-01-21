@@ -7,13 +7,14 @@ export default {
     text_secondary: '#02073E', // secondary body color
     heading: '#0F2137', // primary heading color
     heading_secondary: '#0F2137', // heading color
-    background: '#0B1A4C',
+    background: '#0B1A4D',
+
 
     // background: '#FFFFFF', // body background color
     background_secondary: '#F9FBFD', // secondary background color
     border_color: '#E5ECF4', // border color
     yellow: '#FFA740', // border color
-    primary: '#EA3A60', // primary button and link color
+    primary: '#0B1A4D', // primary button and link color
     secondary: '#2563FF', // secondary color - can be used for hover states
     muted: '#E4E4E4', // muted color
     accent: '#609', // a contrast color for emphasizing UI
@@ -39,8 +40,9 @@ export default {
     '1620px',
   ],
   fonts: {
-    body: "'DM Sans', sans-serif",
+    body: "'Poppins', sans-serif",
     heading: "'DM Sans', sans-serif",
+    headerButton: "'Fira Sans', sans-serif",
   },
   fontSizes: [12, 15, 16, 18, 20, 22, 24, 28, 32, 36, 42, 48, 52, 64],
   fontWeights: {
@@ -267,7 +269,8 @@ export default {
       color: 'white',
       bg: 'primary',
       '&:hover': {
-        boxShadow: 'rgba(233, 76, 84, 0.57) 0px 9px 20px -5px',
+        // boxShadow: 'rgba(233, 76, 84, 0.57) 0px 9px 20px -5px',
+        boxShadow: 'rgba(255, 255, 255, 0.57) 0px 9px 20px -5px',
       },
     },
     whiteButton: {
@@ -283,12 +286,52 @@ export default {
       border: '2px solid',
       borderColor: 'primary',
       color: 'primary',
-      bg: 'transparent',
+      bg: 'transparent',      
       padding: ['10px 15px', null, '15px 30px'],
       '&:hover': {
         color: 'white',
         bg: 'primary',
       },
+    },
+    headerButton: {
+      variant: 'buttons.defaultBtn',
+      borderRadius: '12px',      
+      color: 'white',
+      fontFamily: 'headerButton',      
+      background: 'linear-gradient(180deg, #EB8367 0%, #182D70 100%)', 
+      fontSize: ['13px !important', null, null, 2],
+      letterSpacings: '3px',     
+      cursor: 'pointer',
+      lineHeight: '5px', 
+      transition: 'all 0.25s',
+      fontWeight: 500,
+      padding: ['10px 15px', null, '15px 30px'],
+      mr: 2,
+      '&:hover': {
+        color: 'primary',
+        bg: 'linear-gradient(180deg, #EB8367 0%, #182D70 100%)',
+        boxShadow: 'rgba(256, 256, 256, 0.5) 0px 12px 24px -10px',
+      },
+    },
+    headerTitleButton: {
+      variant: 'buttons.defaultBtn',
+      borderRadius: '0px',
+      color: '#0B1A4C',
+      fontFamily: 'body',
+      '&:hover': {
+        color: 'white',
+        bg: '#EB8367',
+        boxShadow: 'rgba(256, 256, 256, 0.5) 0px 12px 24px -10px',
+      },
+      background: '#EB8367', 
+      fontSize: ['16px !important', null, null, 2],
+      letterSpacings: '5px',     
+      cursor: 'pointer',
+      lineHeight: '30px', 
+      transition: 'all 0.25s',
+      fontWeight: 900,
+      padding: ['10px 15px', null, '15px 30px'],
+      mr: 6,
     },
     textButton: {
       variant: 'buttons.defaultBtn',

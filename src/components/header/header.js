@@ -1,42 +1,69 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui';
+import { jsx, Container, Box , Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
 import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 import MobileDrawer from './mobile-drawer';
-import menuItems from './header.data';
+import HeaderData from './header.data';
+
+import IconInstagram from 'assets/header/instagram.svg';
 
 export default function Header({ className }) {
   return (
     <DrawerProvider>
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
-          <Logo src={LogoDark} />
+
+          <Button
+            className="title__btn"
+            variant="headerTitleButton"
+            aria-label="Giving a Token"
+          >
+            GIVING TOKEN
+          </Button>
+          
+          {HeaderData.socialItems.map(({ path, label, iconSrc }, i) => (
+               <Logo src={iconSrc} path={path} />
+          ))}
 
           <Flex as="nav" sx={styles.nav}>
-            {menuItems.map(({ path, label }, i) => (
+            {HeaderData.menuItems.map(({ path, label }, i) => (
               <Link
                 activeClass="active"
-                to={path}
+                // to={path}
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
                 key={i}
               >
-                {label}
+                {/* {label} */}
               </Link>
             ))}
           </Flex>
 
           <Button
-            className="donate__btn"
-            variant="secondary"
-            aria-label="Get Started"
+            className="connectwallet__btn"
+            variant="headerButton"
+            aria-label="Chart"
           >
-            Get Started
+            CHART
+          </Button>
+          <Button
+            className="connectwallet__btn"
+            variant="headerButton"
+            aria-label="Buy on Pancake Swap"
+          >
+            BUY ON PANCAKE SWAP
+          </Button>
+          <Button
+            className="connectwallet__btn"
+            variant="headerButton"
+            aria-label="Connect Wallet"
+          >
+            CONNECT WALLET
           </Button>
 
           <MobileDrawer />
@@ -68,13 +95,14 @@ const styles = {
     position: 'absolute',
     top: 0,
     left: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: '#000E38 !important',
     transition: 'all 0.4s ease',
     animation: `${positionAnim} 0.4s ease`,
-    '.donate__btn': {
-      flexShrink: 0,
-      mr: [15, 20, null, null, 0],
-      ml: ['auto', null, null, null, 0],
+    '.connectwallet__btn': {
+      flexShrink: 0,      
+    },
+    '.title__btn': {
+      flexShrink: 0,      
     },
     '&.sticky': {
       position: 'fixed',
@@ -86,11 +114,37 @@ const styles = {
         color: 'text',
       },
     },
+    socialmenus: {
+      mt: [1, 1],
+      mb: 1,
+      nav: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+      },
+    },
+    link: {
+      pt: 3,
+      pb: 3,
+      pl: 3,
+      pr: 3,
+      background: '#000000',
+      color: 'text',
+      cursor: 'pointer',
+      transition: 'all 0.35s',
+      display: 'block',
+      // px: [4, null, 2],
+      ':hover': {
+        color: 'primary',
+      },
+    },
   },
   container: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    maxWidth: 'none !important',
   },
   nav: {
     mx: 'auto',
@@ -104,13 +158,13 @@ const styles = {
       px: 5,
       cursor: 'pointer',
       lineHeight: '1.2',
-      transition: 'all 0.15s',
-      '&:hover': {
-        color: 'primary',
-      },
-      '&.active': {
-        color: 'primary',
-      },
+      // transition: 'all 0.15s',
+      // '&:hover': {
+      //   color: 'primary',
+      // },
+      // '&.active': {
+      //   color: 'primary',
+      // },
     },
   },
 };

@@ -31,31 +31,18 @@ export default function WhitePaper() {
         <Box sx={styles.contentBox}>
           <Box sx={styles.contentBoxInner}>
             <Heading as="h2" sx={styles.title}>
-              Subscribe to our Blog
+              WHITE PAPER
             </Heading>
-            <Text as="p" sx={styles.description}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod
-              tempor incididunt labore dolore.
-            </Text>
-            <form onSubmit={subscribe}>
-              <Flex sx={styles.subscribeForm}>
-                <label htmlFor="email" sx={{ variant: 'styles.srOnly' }}>
-                  Email Address
-                </label>
-                <Input
-                  ref={inputEl}
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email address"
-                />
-
-                <div>
-                  
-                </div>
-                
-              </Flex>
-            </form>
+            <Box sx={styles.textContentBoxInner}>
+              <Text as="p" sx={styles.description}>
+                contact address: 0x364747dhdDG$978907DSFh46
+              </Text>
+              <p></p>
+              <Text as="p" sx={styles.description}>
+                 Contrary to popular belief, Lorem Ipsum is not simply random text. a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics. Contrary to popular belief, Lorem Ipsum is not simply random text. a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics.
+                 Contrary to popular belief, Lorem Ipsum is not simply random text. a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics.
+              </Text>
+            </Box>
           </Box>
         </Box>
       </Container>
@@ -65,27 +52,47 @@ export default function WhitePaper() {
 
 const styles = {
   contentBox: {
-    backgroundColor: 'primary',
-    textAlign: 'center',
-    borderRadius: 10,
-    py: ['60px', null, 8],
+    backgroundColor: 'transparent',
+    py: ['30px', null, '30px'],
+    
   },
   contentBoxInner: {
-    width: ['100%', null, '540px', '600px'],
-    mx: 'auto',
-    mt: -1,
-    px: [3, 5],
+    width: ['100%', null, '100%', '100%'],
+    height: ['max-content', null, 'max-content', 'max-content'],
+    mx: '0px',
+    textAlign: 'left',
+    borderRadius: 30,
+    px: [1, 1], 
+    pb: '3px',  
+    backgroundColor: '#1C2F6C',
+  },
+  textContentBoxInner: {
+    width: ['94%', null, '94%', '94%'],
+    height: ['max-content', null, 'max-content', 'max-content'],
+    mx: '3%',
+    textAlign: 'left',
+    borderRadius: 30,
+    px: [1, 1],
+    background: 'linear-gradient(270deg, #1C337E 15%, #3853AD 89%)', 
+    py: 5, 
+    mb: '2%',
   },
   title: {
-    fontSize: ['24px', null, '28px', null, null, '32px', null, '36px'],
+    fontFamily: 'body',
+    fontSize: ['14px', null, '28px', null, null, '45px', null, '52px'],
     color: 'white',
     lineHeight: [1.3, null, null, 1.25],
     fontWeight: '700',
-    letterSpacing: ['-.5px', null, '-1.5px'],
-    mb: [2, 3],
+    letterSpacing: ['3px', null, '3px'],
+    mt: '3%',
+    py: 2,
+    px: '5%',
+    pt: '6%',
+
   },
   description: {
-    fontSize: ['15px', 2, null, null, null, '17px', null, 3],
+    fontFamily: 'body',
+    fontSize: ['12px', 2, null, null, null, '15px', null, 3],
     color: 'white',
     lineHeight: [1.85, null, null, 2],
     px: [0, null, 5],

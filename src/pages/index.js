@@ -15,6 +15,10 @@ import TeamSection from '../sections/team-section';
 import TestimonialCard from '../sections/testimonial';
 import BlogSection from '../sections/blog-section';
 import Subscribe from '../sections/subscribe';
+
+import PreviousDonations from '../sections/previous-donations';
+import PoolTarget from '../sections/pool-target';
+
 import WhitePaper from '../sections/white-paper';
 
 export default function IndexPage() {
@@ -23,7 +27,10 @@ export default function IndexPage() {
       <StickyProvider>
         <Layout>
           <SEO title="Giving Token" />
-          <Banner />
+          {/* <Banner />  */}
+          <PoolTarget />
+          <PreviousDonations />
+{/*           
           <KeyFeature />
           <ServiceSection />
           <Feature />
@@ -33,7 +40,7 @@ export default function IndexPage() {
           <TeamSection />
           <TestimonialCard />
           <BlogSection />
-          <Subscribe />
+          <Subscribe /> */}
           <WhitePaper />
         </Layout>
       </StickyProvider>

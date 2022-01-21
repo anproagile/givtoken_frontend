@@ -11,7 +11,7 @@ import {
   FaGithubAlt,
   FaDribbble,
 } from 'react-icons/fa';
-import menuItems from './header.data';
+import HeaderData from './header.data';
 
 const social = [
   {
@@ -59,7 +59,7 @@ const MobileDrawer = () => {
       <Scrollbars autoHide>
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
-            {menuItems.map(({ path, label }, i) => (
+            {HeaderData.menuItems.map(({ path, label }, i) => (
               <Link
                 activeClass="active"
                 to={path}
@@ -134,7 +134,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     a: {
-      fontSize: '16px',
+      fontSize: '12px',
       fontWeight: '500',
       color: 'text_white',
       py: '15px',
