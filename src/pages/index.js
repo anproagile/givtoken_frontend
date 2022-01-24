@@ -30,7 +30,7 @@ export default function IndexPage() {
           {/* <Banner />  */}
           <PoolTarget />
           <PreviousDonations />
-{/*           
+          
           <KeyFeature />
           <ServiceSection />
           <Feature />
@@ -40,7 +40,7 @@ export default function IndexPage() {
           <TeamSection />
           <TestimonialCard />
           <BlogSection />
-          <Subscribe /> */}
+          <Subscribe />
           <WhitePaper />
         </Layout>
       </StickyProvider>

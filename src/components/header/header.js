@@ -7,10 +7,100 @@ import LogoDark from 'assets/logo.svg';
 import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 import MobileDrawer from './mobile-drawer';
 import HeaderData from './header.data';
+import { ethers } from 'ethers';
+import React, { useEffect, useState } from 'react';
+import Web3 from "web3";
+import { GIV_ADDRESS, GIV_ABI } from '../../abi-config.js';
+
 
 import IconInstagram from 'assets/header/instagram.svg';
 
 export default function Header({ className }) {
+
+  const [currentAccount, setCurrentAccount] = useState(null);
+
+  const tokenAddress = '0xef9ff327783a4d7565728fa846aa80d5e4677a28';
+
+  const [status, setStatus] = useState({
+    isConnected: false,
+    connecting: false,
+    info: { error: false, msg: null },
+  });
+
+  const checkWalletIsConnected = async () => {
+    const { ethereum } = window;
+
+    if (!ethereum) {
+      console.log("Make sure you have Metamask installed!");
+      return;
+    } else {
+      console.log("Wallet exists! We're ready to go!")
+    }
+
+    const accounts = await ethereum.request({ method: 'eth_accounts' });
+
+    if (accounts.length !== 0) {
+      setStatus({
+        isConnected: true,
+        connecting: false,
+        info: { error: false, msg: "connected" },
+      });
+      const account = accounts[0];
+      console.log("Found an authorized account: ", account);
+      setCurrentAccount(account);
+    } else {
+      setStatus({
+        isConnected: false,
+        connecting: false,
+        info: { error: false, msg: "disconnected" },
+      });
+      console.log("No authorized account found");
+
+    }
+  }
+
+  const connectWalletHandler = async () => {
+    const { ethereum } = window;
+
+    if (!ethereum) {
+      alert("Please install Metamask!");
+    }
+
+    try {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      console.log("Found an account! Address: ", accounts[0]);
+      setCurrentAccount(accounts[0]);
+
+      setStatus({
+        isConnected: true,
+        connecting: false,
+        info: { error: false, msg: "connected" },
+      });
+  
+      console.log(status.info.msg);
+
+
+      // const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+      // const erc20accounts = await web3.eth.getAccounts();
+
+      // const contract = new Web3.eth.Contract(GIV_ABI, GIV_ADDRESS);
+      // const tokenBalance = await contract.methods.balanceOf(accounts[0]).call();
+
+      // console.log(tokenBalance);
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    checkWalletIsConnected();
+  }, [])
+
+
+
+
+
   return (
     <DrawerProvider>
       <header sx={styles.header} className={className} id="header">
@@ -54,6 +144,7 @@ export default function Header({ className }) {
           <Button
             className="connectwallet__btn"
             variant="headerButton"
+            // onClick={checkWalletIsConnected}
             aria-label="Buy on Pancake Swap"
           >
             BUY ON PANCAKE SWAP
@@ -61,6 +152,7 @@ export default function Header({ className }) {
           <Button
             className="connectwallet__btn"
             variant="headerButton"
+            onClick={connectWalletHandler}
             aria-label="Connect Wallet"
           >
             CONNECT WALLET
