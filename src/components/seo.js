@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 export default function SEO({
-  description = 'startup product landing page',
+  description = 'Giving Token',
   author = 'anproagile',
   meta,
   title = 'startup landing title',
