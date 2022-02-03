@@ -406,10 +406,10 @@ const styles = {
       color: 'text',
       fontSize: [1, 2],
       lineHeight: 1.2,
-      fontWeight: 400,
+      fontWeight: 500,
       backgroundColor: 'transparent',
       cursor: 'pointer',
-      fontFamily: 'Poppins',
+      fontFamily: 'body',
       letterSpacing: '-0.24px',
       transition: 'all 0.3s',
       '&.active': {

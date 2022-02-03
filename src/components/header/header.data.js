@@ -5,8 +5,6 @@ import IconTwitter from 'assets/header/twitter.svg';
 import IconInstagram from 'assets/header/instagram.svg';
 
 
-
-
 export default {
   socialItems: [
     {
@@ -32,20 +30,33 @@ export default {
   ],
   menuItems: [
     {
-      path: 'home',
-      label: 'Home',
+      path: '',
+      label: 'ROATMAP',
     },
     {
-      path: 'feature',
-      label: 'Features',
+      path: '',
+      label: 'WHITEPAPER',
     },
     {
-      path: 'pricing',
-      label: 'Pricing',
+      path: '',
+      label: 'TOKENOMICS',
     },
-    {
-      path: 'testimonial',
-      label: 'Testimonial',
-    },
+    // {
+    //   path: 'home',
+    //   label: 'Home',
+    // },
+    // {
+    //   path: 'feature',
+    //   label: 'Features',
+    // },
+    // {
+    //   path: 'pricing',
+    //   label: 'Pricing',
+    // },
+    // {
+    //   path: 'testimonial',
+    //   label: 'Testimonial',
+    // },
   ]
 }
+

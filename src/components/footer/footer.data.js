@@ -4,18 +4,10 @@ import Github from 'assets/widget/github.svg';
 
 
 // footer icon svgs
-// import fTelegram from 'assets/widget/telegram.svg';
-// import fTwitter from 'assets/widget/twitter.svg';
-// import fReddit from 'assets/widget/reddit.svg';
-// import fDiscord from 'assets/widget/discord.svg';
-// import fGithub from 'assets/widget/github.svg';
-
-// 
-import fTelegram from 'assets/widget/twitter.svg';
-import fTwitter from 'assets/widget/twitter.svg';
-import fReddit from 'assets/widget/twitter.svg';
-import fDiscord from 'assets/widget/twitter.svg';
-import fGithub from 'assets/widget/twitter.svg';
+import IconDiscord from 'assets/header/discord.svg';
+import IconTelegram from 'assets/header/telegram.svg';
+import IconTwitter from 'assets/header/twitter.svg';
+import IconInstagram from 'assets/header/instagram.svg';
 
 
 export default {
@@ -71,27 +63,22 @@ export default {
     {
       path: '/',
       label: 'telegram',
-      iconSrc: fTelegram,
+      iconSrc: IconTelegram,
     },
     {
       path: '/',
       label: 'twitter',
-      iconSrc: fTwitter,
-    },
-    {
-      path: '/',
-      label: 'reddit',
-      iconSrc: fReddit,
+      iconSrc: IconTwitter,
     },
     {
       path: '/',
       label: 'discord',
-      iconSrc: fDiscord,
+      iconSrc: IconDiscord,
     },
     {
       path: '/',
-      label: 'github',
-      iconSrc: fGithub,
+      label: 'instagram',
+      iconSrc: IconInstagram,
     },
   ],
 };

@@ -6,6 +6,8 @@ import { Container, Flex, Box, Button, Input, Text, Heading } from 'theme-ui';
 
 import Logo from 'components/logo';
 import Eclipse from 'assets/eclipse_1_m.svg';
+import Chart from 'assets/chart.svg';
+
 
 export default function PreviousDonations() {
   // 1. Create a reference to the input so we can fetch/clear it's value.
@@ -30,45 +32,89 @@ export default function PreviousDonations() {
   };
   return (
     <section>
-      <Container sx={styles.containerBox}>
+      <Container sx={styles.maincontainerBox}>
         <Box sx={styles.contentBox}>
             <Logo sx={styles.logo} src={Eclipse} path={'/'} />
             <Heading as="h2" sx={styles.title}>
-                THE <br/>GIVIING TOKEN
-            </Heading>
-            <Heading as="h2" sx={styles.title_2}>
-                GIV
+                THE GIVING POOL
             </Heading>
             <Text as="p" sx={styles.description}>
-            contact address: 0x364747dhdDG$978907DSFh46<br/><br/>this box will describe how the token is set up and its tokenomics<br/><br/>
-            Contrary to popular belief, Lorem Ipsum is not simply random text. a Latin professor at Hampden-Sydney College in Virginia, 
-            looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word 
-            in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics.
+            <br/>The box will describe how the pool is set up & operated<br/> <br/>
+            Contrary to popular belief, Lorem Ipsum is not simply random text. a Latin professor at Hampden-Sydney College in Virginia,
+             looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the 
+             word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" 
+             (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics.
             </Text>
         </Box>
         <Box sx={styles.contentBox1}>
           <Box sx={styles.contentBoxInner1}>
-            <Heading as="h2" sx={styles.title_1}>
-              PREVIOUS DONATIONS
-            </Heading>
-            <Box sx={styles.textContentBoxInner}>
-              <Text as="p" sx={styles.description}>
-                POOL DATE: DECEMBER 20TH, 2021 | POOL SIZE: 10ETH <br/>
-                RECIPIENT: CHARITY A
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner}>
-              <Text as="p" sx={styles.description}>
-                POOL DATE: DECEMBER 20TH, 2021 | POOL SIZE: 10ETH <br/>
-                RECIPIENT: CHARITY A
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner}>
-              <Text as="p" sx={styles.description}>
-                POOL DATE: DECEMBER 20TH, 2021 | POOL SIZE: 10ETH <br/>
-                RECIPIENT: CHARITY A
-              </Text>
-            </Box>
+            <Text as="p" sx={styles.text1}>
+                TARGET VALUE
+            </Text>
+            <Text as="p" sx={styles.text2}>
+                10 ETH
+            </Text>
+            <Container sx={styles.graphContainerBox}>
+                <Box  sx={styles.contentBoxInner1}>
+                    <Text as="p" sx={styles.text4}>
+                        CURRENT <br/>VALUE
+                    </Text>
+                    <Text as="p" sx={styles.text5}>
+                     5.0
+                    </Text>
+                </Box> 
+                <Box  sx={styles.contentBoxInner1}>
+                    <Logo sx={styles.logo} src={Chart} path={'/'} />
+                </Box> 
+                <Box  sx={styles.contentBoxInner1}>
+                    
+                    <Text as="p" sx={styles.text3}>
+                        50%
+                    </Text>
+                </Box>                
+            </Container>
+            <Container sx={styles.containerBox}>                
+                <Box sx={styles.contentBox}>
+                    <Text as="p" sx={styles.percentage}>
+                        15,567 
+                    </Text>
+                    <Text as="p" sx={styles.charityname}>
+                        CHARITY <br/>NAME1 
+                    </Text>                    
+                </Box>
+                <Box sx={styles.contentBox}>
+                    <Text as="p" sx={styles.percentage}>
+                        15,567 
+                    </Text>
+                    <Text as="p" sx={styles.charityname}>
+                        CHARITY <br/>NAME2 
+                    </Text>                    
+                </Box>
+                <Box sx={styles.contentBox}>
+                    <Text as="p" sx={styles.percentage}>
+                        15,567 
+                    </Text>
+                    <Text as="p" sx={styles.charityname}>
+                        CHARITY <br/>NAME3 
+                    </Text>                    
+                </Box>
+                <Box sx={styles.contentBox}>
+                    <Text as="p" sx={styles.percentage}>
+                        15,567 
+                    </Text>
+                    <Text as="p" sx={styles.charityname}>
+                        CHARITY <br/>NAME4 
+                    </Text>                    
+                </Box>
+                <Box sx={styles.contentBox}>
+                    <Text as="p" sx={styles.percentage}>
+                        15,567 
+                    </Text>
+                    <Text as="p" sx={styles.charityname}>
+                        CHARITY <br/>NAME5 
+                    </Text>                    
+                </Box>
+            </Container>
           </Box>
         </Box>        
       </Container>
@@ -77,9 +123,24 @@ export default function PreviousDonations() {
 }
 
 const styles = {
+  maincontainerBox: {
+        display: 'flex',
+        // alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: ['wrap', null, null, 'nowrap'],
+        pb: [0, 7, 0, null, 7],
+        pt: '120px',
+  },
   containerBox: {
     display: 'flex',
     // alignItems: 'center',
+    justifyContent: 'space-between',
+    flexWrap: ['wrap', null, null, 'nowrap'],
+    pb: [0, 7, 0, null, 7],
+  },
+  graphContainerBox: {
+    display: 'flex',
+    alignItems: 'center',
     justifyContent: 'space-between',
     flexWrap: ['wrap', null, null, 'nowrap'],
     pb: [0, 7, 0, null, 7],
@@ -175,6 +236,72 @@ const styles = {
     color: 'white',
     lineHeight: [1, null, null, 1.3],
     px: [0, null, 5],
+  },
+  charityname: {
+    fontFamily: 'body',
+    fontSize: ['6px', 2, null, null, null, '10px', null, 3],
+    color: 'white',
+    textAlign: 'center',
+    lineHeight: [1, null, null, 1.3],
+    px: [0, null, 5],
+    borderRadius : '1',
+    border: '1',
+  },
+  percentage: {
+    fontFamily: 'body',
+    fontSize: ['5px', 2, null, null, null, '8px', null, 3],
+    color: 'white',
+    textAlign: 'center',
+    lineHeight: [1, null, null, 1.3],
+    px: [0, null, 5],
+    pb: '1px',
+  },
+  text1: {
+    fontFamily: 'body',
+    fontWeight: '900',
+    fontSize: ['12px', 2, null, null, null, '16px', null, 3],
+    color: 'white',
+    lineHeight: [1, null, null, 1.3],
+    px: [0, null, 5],
+    textAlign : 'right', 
+   
+    pt: '15px',
+  },
+  text2: {
+    fontFamily: 'body',
+    fontWeight: '900',
+    fontSize: ['10px', 2, null, null, null, '14px', null, 3],
+    color: '#eb8368',
+    lineHeight: [1, null, null, 1.3],
+    px: [4, null, 7],
+    textAlign : 'right', 
+  },
+  text3: {
+    fontFamily: 'body',
+    fontSize: ['9px', 2, null, null, null, '13px', null, 3],
+    color: 'white',
+    textAlign: 'center',
+    lineHeight: [1, null, null, 1.3],
+    px: [0, null, 5],
+  },
+  text4: {
+    fontFamily: 'body',
+    fontWeight: '900',
+    fontSize: ['8px', 2, null, null, null, '12px', null, 3],
+    color: 'white',
+    lineHeight: [1, null, null, 1],
+    px: [0, null, 5],
+    textAlign : 'center', 
+    pt: '15px',
+  },
+  text5: {
+    fontFamily: 'body',
+    fontWeight: '900',
+    fontSize: ['8px', 2, null, null, null, '12px', null, 3],
+    color: '#eb8368',
+    lineHeight: [1, null, null, 1],
+    px: [4, null, 7],
+    textAlign : 'center', 
   },
   subscribeForm: {
     mt: [6, null, null, 7],

@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx, Container, Box , Flex, Button } from 'theme-ui';
+import { jsx, Container, Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
+import GIV_LOGO from 'assets/giv_logo.svg';
 import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 import MobileDrawer from './mobile-drawer';
-import HeaderData from './header.data';
-import { ethers } from 'ethers';
-import React, { useEffect, useState } from 'react';
-import Web3 from "web3";
-import { GIV_ADDRESS, GIV_ABI } from '../../abi-config.js';
+import headerData from './header.data';
 
+import { ethers } from 'ethers';
+import { useEffect, useState } from 'react';
+// import Web3 from "web3";
 
 import IconInstagram from 'assets/header/instagram.svg';
 
@@ -85,7 +85,6 @@ export default function Header({ className }) {
 
       // const contract = new Web3.eth.Contract(GIV_ABI, GIV_ADDRESS);
       // const tokenBalance = await contract.methods.balanceOf(accounts[0]).call();
-
       // console.log(tokenBalance);
 
     } catch (err) {
@@ -99,37 +98,37 @@ export default function Header({ className }) {
 
 
 
-
-
   return (
     <DrawerProvider>
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
 
+          <Logo src={GIV_LOGO} path={'/'} />  
           <Button
             className="title__btn"
-            variant="headerTitleButton"
-            aria-label="Giving a Token"
+            variant="headerButton"
+            aria-label="The Giving Pool"
           >
-            GIVING TOKEN
+            THE GIVING POOL
           </Button>
-          
-          {HeaderData.socialItems.map(({ path, label, iconSrc }, i) => (
+
+
+          {/* {headerData.socialItems.map(({ path, label, iconSrc }, i) => (
                <Logo src={iconSrc} path={path} />
-          ))}
+          ))} */}
 
           <Flex as="nav" sx={styles.nav}>
-            {HeaderData.menuItems.map(({ path, label }, i) => (
+            {headerData.menuItems.map(({ path, label }, i) => (
               <Link
                 activeClass="active"
-                // to={path}
+                to={path}
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
                 key={i}
               >
-                {/* {label} */}
+                {label} 
               </Link>
             ))}
           </Flex>
@@ -199,7 +198,7 @@ const styles = {
     '&.sticky': {
       position: 'fixed',
       backgroundColor: 'background',
-      color: '#000000',
+      color: '#FFFFFF',
       boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)',
       py: 3,
       'nev > a': {
@@ -241,22 +240,24 @@ const styles = {
   nav: {
     mx: 'auto',
     display: 'none',
-    '@media screen and (min-width: 1024px)': {
+    '@media screen and (min-width: 1465px)': {
       display: 'block',
     },
     a: {
-      fontSize: 2,
+      fontSize: 4,
       fontWeight: 'body',
+      fontFamily: 'headerButton',
       px: 5,
       cursor: 'pointer',
       lineHeight: '1.2',
-      // transition: 'all 0.15s',
-      // '&:hover': {
-      //   color: 'primary',
-      // },
-      // '&.active': {
-      //   color: 'primary',
-      // },
+      color: '#FFFFFF',
+      transition: 'all 0.15s',
+      '&:hover': {
+        color: '#00ffff',
+      },
+      '&.active': {
+        color: '#FFFFFF',
+      },
     },
   },
 };

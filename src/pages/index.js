@@ -17,7 +17,9 @@ import BlogSection from '../sections/blog-section';
 import Subscribe from '../sections/subscribe';
 
 import PreviousDonations from '../sections/previous-donations';
+import PrevDonations from '../sections/prev-donations';
 import PoolTarget from '../sections/pool-target';
+import PoolTrending from '../sections/pool-trending';
 
 import WhitePaper from '../sections/white-paper';
 
@@ -29,9 +31,11 @@ export default function IndexPage() {
           <SEO title="Giving Token" />
           {/* <Banner />  */}
           <PoolTarget />
-          <PreviousDonations />
+          <PoolTrending />
+          {/* <PreviousDonations /> */}
+          <PrevDonations />
           
-          <KeyFeature />
+          {/* <KeyFeature />
           <ServiceSection />
           <Feature />
           <CoreFeature />
@@ -40,8 +44,8 @@ export default function IndexPage() {
           <TeamSection />
           <TestimonialCard />
           <BlogSection />
-          <Subscribe />
-          <WhitePaper />
+          <Subscribe /> */}
+          {/* <WhitePaper /> */}
         </Layout>
       </StickyProvider>
     </ThemeProvider>

@@ -14,10 +14,12 @@ export default {
     background_secondary: '#F9FBFD', // secondary background color
     border_color: '#E5ECF4', // border color
     yellow: '#FFA740', // border color
+    white: '#FFFFFF',
     primary: '#0B1A4D', // primary button and link color
     secondary: '#2563FF', // secondary color - can be used for hover states
     muted: '#E4E4E4', // muted color
     accent: '#609', // a contrast color for emphasizing UI
+    textTitlecolor: '#0B1A4C', // Title Colors in every section
 
     // highlight	a background color for highlighting text
     modes: {
@@ -297,8 +299,8 @@ export default {
       variant: 'buttons.defaultBtn',
       borderRadius: '12px',      
       color: 'white',
-      fontFamily: 'headerButton',      
-      background: 'linear-gradient(180deg, #EB8367 0%, #182D70 100%)', 
+      fontFamily: 'headerButton', 
+      background: 'linear-gradient(180deg, #F53548 0%, #9803A4 100%)', 
       fontSize: ['13px !important', null, null, 2],
       letterSpacings: '3px',     
       cursor: 'pointer',

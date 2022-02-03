@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 
 export default function SEO({
-  description = 'Giving Token',
-  author = 'anproagile',
+  description = 'startup product landing page',
+  author = 'RedQ, Inc',
   meta,
   title = 'startup landing title',
 }) {

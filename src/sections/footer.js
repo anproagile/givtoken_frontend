@@ -22,7 +22,7 @@ export default function Footer() {
           ))}
         </Grid> */}
         <Text sx={styles.footer.footercaption}>
-            THE GIVING POOL
+            GIVING TOKEN
         </Text>
         <Box sx={styles.footer.menus}>
             <nav>
@@ -38,8 +38,8 @@ export default function Footer() {
             </nav>
         </Box>         
         <Text sx={styles.footer.copyright}>
-            COPYRIGHT {new Date().getFullYear()} - THEGIVINGPOOL.IO
-          </Text>
+            Copyright {new Date().getFullYear()} - THEGIVINGPOOL.IO
+        </Text>
       </Container>
     </footer>
   );
@@ -73,7 +73,8 @@ const styles = {
       pb: 3,
       pl: 3,
       pr: 3,
-      color: 'text',
+      backgroundColor: 'transparent',
+      color: '#0000FF',
       cursor: 'pointer',
       transition: 'all 0.35s',
       display: 'block',
@@ -93,8 +94,6 @@ const styles = {
       fontSize: [1, '14px'],
       color: '#FFFFFF',
       width: '100%',
-      letterSpacing: '3px',
-
     },
     footercaption: {    
       display: 'flex',

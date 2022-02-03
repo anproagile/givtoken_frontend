@@ -50,7 +50,6 @@ export default function ServiceSection() {
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
-    console.log('service section button clicked');
   };
   return (
     <section sx={{ variant: 'section.services' }}>
