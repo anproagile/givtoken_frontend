@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui';
+import { jsx, Container, Flex, Button, Text } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
@@ -13,7 +13,14 @@ import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 // import Web3 from "web3";
 
-import IconInstagram from 'assets/header/instagram.svg';
+import Roadmap from '../roadmap/roadmap';
+
+import {
+  Modal,
+  ModalTitle,
+  ModalContent,
+  ModalFooter,
+} from '@mattjennings/react-modal';
 
 export default function Header({ className }) {
 
@@ -22,11 +29,12 @@ export default function Header({ className }) {
   const tokenAddress = '0xef9ff327783a4d7565728fa846aa80d5e4677a28';
 
   const [status, setStatus] = useState({
+    show: false,
     isConnected: false,
     connecting: false,
     info: { error: false, msg: null },
   });
-
+  
   const checkWalletIsConnected = async () => {
     const { ethereum } = window;
 
@@ -96,18 +104,39 @@ export default function Header({ className }) {
     checkWalletIsConnected();
   }, [])
 
+  const showModal = () => {
+    console.log('Show status',status.show);
+    setStatus({
+      show: true
+    });
+
+    document.body.style.overflow = 'hidden';
+  };
+
+  const onClose = () => {
+    setStatus({
+      show: false
+    });
+    console.log('Show status',status.show);
+    document.body.style.overflow = 'auto';
+    // this.setState({ show: false });
+  };
+
 
 
   return (
     <DrawerProvider>
+      
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
 
           <Logo src={GIV_LOGO} path={'/'} />  
+          
           <Button
             className="title__btn"
             variant="headerButton"
-            aria-label="The Giving Pool"
+                onClick={showModal}
+                aria-label="The Giving Pool"
           >
             THE GIVING POOL
           </Button>
@@ -118,19 +147,51 @@ export default function Header({ className }) {
           ))} */}
 
           <Flex as="nav" sx={styles.nav}>
-            {headerData.menuItems.map(({ path, label }, i) => (
-              <Link
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {label} 
-              </Link>
-            ))}
+            <Button
+              className="connectwallet__btn"
+              variant="headerButton"
+              // onClick={onclick}
+              onClick={showModal}
+              // aria-label={label}
+            >
+              ROADMAP
+            </Button>
+
+            <Button
+              className="connectwallet__btn"
+              variant="headerButton"
+              // onClick={onclick}
+              onClick={showModal}
+              // aria-label={label}
+            >
+              WHITEPAPER
+            </Button>
+
+            <Button
+              className="connectwallet__btn"
+              variant="headerButton"
+              // onClick={onclick}
+              onClick={showModal}
+              // aria-label={label}
+            >
+              TOKENOMICS
+            </Button>
+
+            {/* {headerData.menuItems.map(({ onclick,path, label }, i) => (
+                
+              
+              // <Link
+              //   activeClass="active"
+              //   to={path}
+              //   spy={true}
+              //   smooth={true}
+              //   offset={-70}
+              //   duration={500}
+              //   key={i}
+              // >
+              //   {label} 
+              // </Link>
+            ))} */}
           </Flex>
 
           <Button
@@ -160,6 +221,31 @@ export default function Header({ className }) {
           <MobileDrawer />
         </Container>
       </header>
+      <Modal sx={styles.modals} open={status.show}>
+      {/* {({ onClose }) => ( */}
+        <>
+          <ModalFooter>
+            <Button onClick={onClose}>OK</Button>
+          </ModalFooter>
+          <ModalTitle>
+            <Text
+              sx={{
+                fontSize: 2,
+                fontWeight: 'medium',
+              }}
+            >
+              Hello!
+            </Text>
+          </ModalTitle>
+          <ModalContent sx={styles.modalContent}>
+            <Roadmap></Roadmap>
+            <Roadmap></Roadmap>
+            <Text>This is a modal example</Text>
+          </ModalContent>
+          
+        </>
+      {/* )} */}
+    </Modal>
     </DrawerProvider>
   );
 }
@@ -178,6 +264,18 @@ const positionAnim = keyframes`
 `;
 
 const styles = {
+
+
+  modals: {
+    width: '93%',
+    background: '#ffffff',
+    // overflowY: 'scroll',
+  },
+  modalContent: {
+      px: '1rem',
+      flexGrow: 1,
+      overflowY: 'scroll',
+  },
   header: {
     color: 'text',
     fontWeight: 'body',

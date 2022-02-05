@@ -9,6 +9,8 @@
     "export": "next export"
   },
   "dependencies": {
+    "@mattjennings/react-modal": "^1.0.3",
+    "@theme-ui/presets": "^0.13.1",
     "dotenv": "^8.2.0",
     "ethers": "^5.5.3",
     "framer-motion": "^2.7.5",

@@ -23,31 +23,40 @@ import PoolTrending from '../sections/pool-trending';
 
 import WhitePaper from '../sections/white-paper';
 
+import { AnimatedModalStack } from '@mattjennings/react-modal'
+// import { tailwind } from '@theme-ui/presets'
+// import { withModalTheme } from '@mattjennings/react-modal'
+
+// export const theme = withModalTheme(tailwind)
+
 export default function IndexPage() {
   return (
-    <ThemeProvider theme={theme}>
-      <StickyProvider>
-        <Layout>
-          <SEO title="Giving Token" />
-          {/* <Banner />  */}
-          <PoolTarget />
-          <PoolTrending />
-          {/* <PreviousDonations /> */}
-          <PrevDonations />
-          
-          {/* <KeyFeature />
-          <ServiceSection />
-          <Feature />
-          <CoreFeature />
-          <WorkFlow />
-          <Package />
-          <TeamSection />
-          <TestimonialCard />
-          <BlogSection />
-          <Subscribe /> */}
-          {/* <WhitePaper /> */}
-        </Layout>
-      </StickyProvider>
-    </ThemeProvider>
+    <AnimatedModalStack>
+      <ThemeProvider theme={theme}>
+        <StickyProvider>
+          <Layout>
+            <SEO title="Giving Token" />
+            {/* <Banner />  */}
+            <PoolTarget />
+            <PoolTrending />
+            {/* <PreviousDonations /> */}
+            <PrevDonations />
+            
+            {/* <KeyFeature />
+            <ServiceSection />
+            <Feature />
+            <CoreFeature />
+            <WorkFlow />
+            <Package />
+            <TeamSection />
+            <TestimonialCard />
+            <BlogSection />
+            <Subscribe /> */}
+            {/* <WhitePaper /> */}
+          </Layout>
+        </StickyProvider>
+      </ThemeProvider>
+    </AnimatedModalStack>
+   
   );
 }

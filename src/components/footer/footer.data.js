@@ -61,24 +61,29 @@ export default {
   ],
   footermenuItem: [
     {
-      path: '/',
+      path: 'https://t.me/TheGivingPool',
       label: 'telegram',
       iconSrc: IconTelegram,
     },
     {
-      path: '/',
+      path: 'https://mobile.twitter.com/givingpool',
       label: 'twitter',
       iconSrc: IconTwitter,
     },
     {
-      path: '/',
+      path: 'https://discord.gg/GxmXfXef',
       label: 'discord',
       iconSrc: IconDiscord,
     },
     {
-      path: '/',
+      path: 'https://www.instagram.com/thegivingpool.io/',
       label: 'instagram',
       iconSrc: IconInstagram,
     },
   ],
 };
+
+
+
+
+

@@ -1,5 +1,42 @@
-export default {
+import { tailwind } from '@theme-ui/presets'
+import { withModalTheme } from '@mattjennings/react-modal'
 
+// export const theme = withModalTheme{
+//   ...tailwind,
+export default {
+  ...tailwind,
+  modals: {
+    // add a new `outlined` variant that can be used on <Modal />
+    outlined: {
+      backgroundColor: 'background',
+      border: '1px solid',
+      borderRadius: '5px',
+      borderColor: 'gray',
+      display: 'flex',
+      flexDirection: 'column',
+      maxHeight: '100vh',
+      minHeight: '16rem',
+      minWidth: '16rem',
+      maxWidth: '64rem',
+      position: 'absolute',
+      top: ['25%', '25%', '10%'],
+      zIndex: 'modal',
+    },
+
+    // will be used for the `outlined` variant when the modal is in full screen
+    outlinedFullScreen: {
+      backgroundColor: 'background',
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      maxHeight: '200vh',
+      height: `fill-available`,
+      position: 'absolute',
+      top: 0,
+      width: '100vw',
+      zIndex: 'modal',
+    },
+  },
   background : '#fff',
   // example colors with dark mode
   colors: {

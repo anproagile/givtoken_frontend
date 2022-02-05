@@ -30,14 +30,17 @@ export default {
   ],
   menuItems: [
     {
+      onclick: '',
       path: '',
-      label: 'ROATMAP',
+      label: 'ROADMAP',
     },
     {
+      onclick: '',
       path: '',
       label: 'WHITEPAPER',
     },
     {
+      onclick: '',
       path: '',
       label: 'TOKENOMICS',
     },
