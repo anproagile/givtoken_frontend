@@ -6,34 +6,14 @@ import FooterLogo from 'assets/logo.svg';
 export default function Footer() {
   return (
     <footer sx={styles.footer}>
-      <Container>
-        {/* <Grid sx={styles.widgets}>
-          {data.widgets.map((item) => (
-            <Box
-              key={`footer-widget--key${item.id}`}
-              sx={styles.widgets.widgetItem}
-            >
-              <Image src={item.iconSrc} alt={item.altText} />
-              <Box sx={styles.widgets.infoWrapper}>
-                <Heading as="h3">{item.title}</Heading>
-                <Text as="p">{item.description}</Text>
-              </Box>
-            </Box>
-          ))}
-        </Grid> */}
+      <Container>       
         <Text sx={styles.footer.footercaption}>
             THE GIVING POOL
         </Text>
         <Box sx={styles.footer.menus}>
             <nav>
               {data.footermenuItem.map(({ path, label, iconSrc }, i) => (
-                <Link
-                  path={path}
-                  key={i}
-                  label={label}
-                  sx={styles.footer.link}>
-                  <Image src={iconSrc} alt="Logo" />
-                </Link>
+                <a sx={styles.footer.link} target="_blank" href={path}><img src={iconSrc} /></a>
               ))}
             </nav>
         </Box>         
@@ -58,6 +38,7 @@ const styles = {
       flexDirection: 'column',
     },
     menus: {
+      alignItems: 'center',
       mt: [1, 1],
       mb: 1,
       nav: {

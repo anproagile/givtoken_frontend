@@ -8,6 +8,11 @@ import Logo from 'components/logo';
 import headerData from 'components/header/header.data';
 import pool_icon from 'assets/pool_icon.svg';
 
+
+// import Logo_target from 'assets/logo_target.svg';
+import Logo_target from 'assets/circle_bg.png';
+
+
 export default function PoolTarget() {
   // 1. Create a reference to the input so we can fetch/clear it's value.
   const inputEl = useRef(null);
@@ -39,17 +44,18 @@ export default function PoolTarget() {
                 </Heading>
                 <Heading as="h2" sx={styles.title_left}>PLATFORM</Heading>
                 <Text as="p" sx={styles.description_left}>
-                  The Giving Pool raises funding for  worthy and charitable foundations - handpicked by $GIV holders.<br/><br/>
-                  $GIV holders can connect their wallets to verify ownership of the $GIV Token. Token holders
-                  can participate in the “Pools” voting tally. When the pools “Target Value” is reached, the
-                  highest nominated will receive a donation of the pools balance. <br/><br/>
-                  Alongside participating in the voting tally, The $GIV Token rewards holders with USDT and
-                  enters them in a chance for giveaways.<br/><br/>
-                  Learn more about The GIV Platform and participate in the: Donation, Reward & Giveaway aspects – on our Discord & Social Media.<br/><br/>                    
+                  THE GIVING POOL RAISES FUNDING FOR WORTHY AND CHARITABLE FOUNDATIONS - HANDPICKED BY $GIV HOLDERS.<br/><br/>
+                  $GIV HOLDERS CAN CONNECT THEIR WALLETS TO VERIFY OWNERSHIP OF THE $GIV TOKEN. TOKEN HOLDERS
+                  CAN PARTICIPATE IN THE “POOLS” VOTING TALLY. WHEN THE POOLS “TARGET VALUE” IS REACHED, THE
+                  HIGHEST NOMINATED WILL RECEIVE A DONATION OF THE POOLS BALANCE. <br/><br/>
+                  ALONGSIDE PARTICIPATING IN THE VOTING TALLY, THE $GIV TOKEN REWARDS HOLDERS WITH USDT AND
+                  ENTERS THEM IN A CHANCE FOR GIVEAWAYS.<br/><br/>
+                  LEARN MORE ABOUT THE GIV PLATFORM AND PARTICIPATE IN THE: DONATION, REWARD & GIVEAWAY ASPECTS – ON OUR DISCORD & SOCIAL MEDIA.<br/><br/>                    
                 </Text>
                 <Box sx={styles.containerBox_left}>
                     {headerData.socialItems.map(({ path, label, iconSrc }, i) => (
-                        <Logo src={iconSrc} path={path} />
+                        <a target="_blank" href={path}><img src={iconSrc} /></a>
+
                     ))} 
                 </Box>
         </Box>
@@ -63,34 +69,44 @@ export default function PoolTarget() {
                   <Container sx={styles.containerBox_target}>
                       <Container sx={styles.containerBox_target_split}>
                           <Box  sx={styles.contentBoxInner1}>
-                            <Box  sx={styles.contentBoxInner1}>
+                            <Box  sx={styles.contentBox_Targetvalue_Outer}>
+                              <Box  sx={styles.contentBox_Targetvalue_Inner}>
+                                  <Text as="p" sx={styles.text_target_blue}>
+                                      TARGET VALUE:
+                                  </Text>
+                                  <Text as="p" sx={styles.text_target_red}>
+                                      10 ETH
+                                  </Text>
+                              </Box> 
+                            </Box> 
+                            <Box  sx={styles.contentBox_Currentvalue_Outer}>
+                              <Box  sx={styles.contentBox_Currentvalue_Inner}>
                                 <Text as="p" sx={styles.text_target_blue}>
-                                    TARGET VALUE:
+                                    CURRENT VALUE:
                                 </Text>
                                 <Text as="p" sx={styles.text_target_red}>
-                                    10 ETH
+                                    5 ETH
                                 </Text>
-                            </Box> 
-                            <Box  sx={styles.contentBoxInner1}>
-                              <Text as="p" sx={styles.text_target_blue}>
-                                  CURRENT VALUE:
-                              </Text>
-                              <Text as="p" sx={styles.text_target_red}>
-                                  5 ETH
-                              </Text>
-                          </Box>   
+                              </Box> 
+                            </Box>   
                           </Box> 
-                          <Box  sx={styles.contentBoxInner1}>
-                              <Text as="p" sx={styles.text_target_blue}>
-                                  REMAINING:
-                              </Text>
-                              <Text as="p" sx={styles.text_target_red}>
-                                  5 ETH
-                              </Text>
+                          <Box  sx={styles.contentBox_Remaining_Outer}>
+                            <Box  sx={styles.contentBox_Remaining_Inner}>
+                                <Text as="p" sx={styles.text_target_blue}>
+                                    REMAINING:
+                                </Text>
+                                <Text as="p" sx={styles.text_target_red}>
+                                    5 ETH
+                                </Text>
+                            </Box>
                           </Box>                                        
                       </Container>
-                      <Box  sx={styles.contentBoxInner1}>
-                          <Logo sx={styles.logo} src={pool_icon} path={'/'} />
+                      <Box  sx={styles.contentBox_target_Circle}>
+                          
+                          <Box  sx={styles.contentBox_Circle}>
+                              {/* <Logo sx={styles.logo} src={pool_icon} path={'/'} /> */}
+                          </Box>
+
                           <Text as="p" sx={styles.charityname_red}>
                              POOL #001 
                           </Text>
@@ -156,12 +172,12 @@ const styles = {
       width: '30%',
       height: '100%',  
       pt: [0, 1, 0, null, 1],
-      px: [0, 2, 0, null, 2],
+      px: [0, 4, 0, null, 4],
 
   },
   containerBox_left: {
       display: 'inline-flex',
-      // alignItems: 'center',
+      alignItems: 'center',
       justifyContent: 'space-between',
       flexWrap: ['wrap', null, null, 'nowrap'],
       pb: [0, 2, 0, null, 2],
@@ -179,11 +195,13 @@ const styles = {
       lineHeight: [1.3, null, null, 1.25],
       px: [0, null, 2],
       py: '5px',
+      textShadow: '3px 3px #00000040',
+
   },
   title_left_red: {
       fontFamily: 'body',
       fontSize: ['14px', null, '24px', null, null, '36px', null, '40px'],
-      color: '#eb8368',
+      color: '#E34358',
       lineHeight: [1.3, null, null, 1.25],
       fontWeight: '900',
       letterSpacing: ['1px', null, '1px'],
@@ -243,7 +261,7 @@ const styles = {
   },
   title_center: {
       transform: 'translate(0%, -80%)',
-      width: ['80%', null, '80%', '80%'],
+      width: ['60%', null, '60%', '60%'],
       borderRadius: 30,
       background: 'linear-gradient(270.17deg, #1C337E 14.88%, #F9FAFF 89.04%, #F9FAFF 89.04%)',
       textAlign: 'center',
@@ -256,7 +274,9 @@ const styles = {
       mr: 'auto',
       ml: 'auto',
       py: '3%',
-      mb: '4%',
+      // mb: '4%',
+      textShadow: '3px 3px #00000040',
+
   },
   description: {
       fontFamily: 'body',
@@ -292,6 +312,9 @@ const styles = {
     // py: ['30px', null, '30px'],
     width: '100%',
     // height: '90px',
+  },
+  contentBox_target_Circle: {
+    width: 'inherit',
   },
 
   containerBox_target: {
@@ -355,6 +378,8 @@ const styles = {
     borderRadius : '1',
     border: '1',
     mb: '5px',
+    textShadow: '2px 2px #00000040',
+
   },
   charityname_red: {
     fontFamily: 'body',
@@ -367,6 +392,7 @@ const styles = {
     borderRadius : '1',
     border: '1',
     mb: '5px',
+    '-webkit-text-stroke': '1px #1C337E',
   },
   percentage_red: {
     fontFamily: 'body',
@@ -393,7 +419,7 @@ const styles = {
   text_target_blue: {
     fontFamily: 'body',
     fontWeight: '900',
-    fontSize: ['5px', 2, null, null, null, '8px', null, 3],
+    fontSize: ['0.3em', '0.45em', '0.45em', '0.6em', '0.75em', '0.8', '0.8em', '0.8em'],
     color: '#1C337E',
     textAlign: 'center',
     lineHeight: [1, null, null, 1.3],
@@ -405,7 +431,8 @@ const styles = {
   text_target_red: {
     fontFamily: 'body',
     fontWeight: '900',
-    fontSize: ['5px', 2, null, null, null, '8px', null, 3],
+    // fontSize: '1.5em',
+    fontSize: ['0.3em', 2, '0.45em', '0.6em', '0.75em', '1em', null, 3],
     color: '#E34358',
     textAlign: 'center',
     lineHeight: [1, null, null, 1.3],
@@ -418,4 +445,35 @@ const styles = {
     px: '5%',
     pb: '2%',
   },
+  contentBox_Remaining_Inner: {
+    // position: 'relative'
+  },
+  contentBox_Remaining_Outer: {
+    position: 'relative',
+    top: '40%'
+  },
+  contentBox_Targetvalue_Inner: {
+    // position: 'relative'
+  },
+  contentBox_Targetvalue_Outer: {
+    position: 'relative',
+    top: '15%'
+  },
+  contentBox_Currentvalue_Inner: {
+    // position: 'relative'
+  },
+  contentBox_Currentvalue_Outer: {
+    position: 'relative',
+    top: '50%'
+  },
+
+  contentBox_Circle: {
+    backgroundImage: `url(${Logo_target})`,
+    backgroundRepeat: `no-repeat`,
+    backgroundPosition: 'center center',
+    backgroundSize: '100%',
+    height: 'calc(100vw - 80vw)',
+    width : '60%',
+    margin: 'auto',
+  }
 };

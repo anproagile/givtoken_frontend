@@ -29,7 +29,10 @@ import { AnimatedModalStack } from '@mattjennings/react-modal'
 
 // export const theme = withModalTheme(tailwind)
 
+
 export default function IndexPage() {
+
+
   return (
     <AnimatedModalStack>
       <ThemeProvider theme={theme}>
@@ -41,7 +44,6 @@ export default function IndexPage() {
             <PoolTrending />
             {/* <PreviousDonations /> */}
             <PrevDonations />
-            
             {/* <KeyFeature />
             <ServiceSection />
             <Feature />

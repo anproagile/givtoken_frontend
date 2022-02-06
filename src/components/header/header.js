@@ -4,16 +4,19 @@ import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
-import GIV_LOGO from 'assets/giv_logo.svg';
+import GIV_LOGO from 'assets/giv_logo_45.svg';
 import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 import MobileDrawer from './mobile-drawer';
 import headerData from './header.data';
+import ScrollView from '@mattjennings/react-modal/'
 
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 // import Web3 from "web3";
 
 import Roadmap from '../roadmap/roadmap';
+import NextLink from 'next/link'
+import RoadmapModal from 'components/roadmap/roadmap-modal';
 
 import {
   Modal,
@@ -22,9 +25,14 @@ import {
   ModalFooter,
 } from '@mattjennings/react-modal';
 
+import styled from "styled-components";
+
 export default function Header({ className }) {
 
   const [currentAccount, setCurrentAccount] = useState(null);
+
+  const [showModal, setShowModal] = useState(false);
+
 
   const tokenAddress = '0xef9ff327783a4d7565728fa846aa80d5e4677a28';
 
@@ -104,10 +112,13 @@ export default function Header({ className }) {
     checkWalletIsConnected();
   }, [])
 
-  const showModal = () => {
-    console.log('Show status',status.show);
+  const openPancake = () => {
+    window.open('https://pancakeswap.finance/', '_blank');
+  }
+  const openModal = () => {
     setStatus({
-      show: true
+      show: true,
+      // showModal: true,
     });
 
     document.body.style.overflow = 'hidden';
@@ -135,8 +146,7 @@ export default function Header({ className }) {
           <Button
             className="title__btn"
             variant="headerButton"
-                onClick={showModal}
-                aria-label="The Giving Pool"
+            aria-label="The Giving Pool"
           >
             THE GIVING POOL
           </Button>
@@ -149,9 +159,9 @@ export default function Header({ className }) {
           <Flex as="nav" sx={styles.nav}>
             <Button
               className="connectwallet__btn"
-              variant="headerButton"
+              variant="headerMenuButton"
               // onClick={onclick}
-              onClick={showModal}
+              onClick={openModal}
               // aria-label={label}
             >
               ROADMAP
@@ -159,20 +169,14 @@ export default function Header({ className }) {
 
             <Button
               className="connectwallet__btn"
-              variant="headerButton"
-              // onClick={onclick}
-              onClick={showModal}
-              // aria-label={label}
+              variant="headerMenuButton"
             >
               WHITEPAPER
             </Button>
 
             <Button
               className="connectwallet__btn"
-              variant="headerButton"
-              // onClick={onclick}
-              onClick={showModal}
-              // aria-label={label}
+              variant="headerMenuButton"
             >
               TOKENOMICS
             </Button>
@@ -204,9 +208,9 @@ export default function Header({ className }) {
           <Button
             className="connectwallet__btn"
             variant="headerButton"
-            // onClick={checkWalletIsConnected}
+            onClick={openPancake}
             aria-label="Buy on Pancake Swap"
-          >
+            >
             BUY ON PANCAKE SWAP
           </Button>
           <Button
@@ -221,13 +225,12 @@ export default function Header({ className }) {
           <MobileDrawer />
         </Container>
       </header>
+
       <Modal sx={styles.modals} open={status.show}>
       {/* {({ onClose }) => ( */}
         <>
-          <ModalFooter>
-            <Button onClick={onClose}>OK</Button>
-          </ModalFooter>
-          <ModalTitle>
+          
+          {/* <ModalTitle>
             <Text
               sx={{
                 fontSize: 2,
@@ -236,12 +239,18 @@ export default function Header({ className }) {
             >
               Hello!
             </Text>
-          </ModalTitle>
-          <ModalContent sx={styles.modalContent}>
-            <Roadmap></Roadmap>
-            <Roadmap></Roadmap>
-            <Text>This is a modal example</Text>
-          </ModalContent>
+          </ModalTitle> */}
+          {/* <ModalContent sx={styles.modalContent}> */}
+            <Container sx={styles.container_modal}>
+              <Container sx={styles.container_modal_inner}>
+                  {/* <ModalFooter>
+                    <Button onClick={onClose}>OK</Button>
+                  </ModalFooter> */}
+                  <Roadmap></Roadmap>
+                  <Button sx={styles.continue_button} onClick={onClose}>CONTINUE TO<br />WEBSITE &gt;</Button>
+              </Container>
+            </Container>
+          {/* </ModalContent> */}
           
         </>
       {/* )} */}
@@ -265,16 +274,38 @@ const positionAnim = keyframes`
 
 const styles = {
 
-
+  continue_button: {
+    
+    variant: 'buttons.defaultBtn',
+    float: 'right',
+    textAlign: 'right',   
+    color: 'white',
+    fontFamily: 'headerButton', 
+    background: 'transparent', 
+    fontSize: ['45px !important', null, null, 4],
+    letterSpacings: '3px',     
+    cursor: 'pointer',
+    lineHeight: '50px', 
+    transition: 'all 0.25s',
+    fontWeight: 500,
+    pl: '80%',
+    padding: ['10px 15px', null, '15px 30px'],
+    mr: 2,
+    '&:hover': {
+      color: '#d1adad',
+      boxShadow: 'rgba(256, 256, 256, 0.5) 0px 12px 24px -10px',
+    },
+  },
   modals: {
-    width: '93%',
+    width: '99%',    
     background: '#ffffff',
     // overflowY: 'scroll',
   },
   modalContent: {
       px: '1rem',
       flexGrow: 1,
-      overflowY: 'scroll',
+      // overflowY: 'scroll',
+      // position: 'relative',
   },
   header: {
     color: 'text',
@@ -330,15 +361,50 @@ const styles = {
     },
   },
   container: {
+    
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     maxWidth: 'none !important',
   },
+  container_modal: {
+    '&::-webkit-scrollbar': {
+      width: '0px'
+    },
+    borderRadius: 60,
+    maxWidth: 'none !important',
+    width: '98%',
+    my: '1vh',
+    py: '200px',
+    pt: '30px',
+    pb: '98vh',
+    background: '#101B3FF0',
+    width: '100%',
+   height: '100%',
+   overflow: 'auto'
+  },
+
+  container_modal_inner: {
+    height: '98vh !important',
+    pb: '5vh',
+    // px: '1rem',
+    // flexGrow: 1,
+    // overflowY: 'scroll',
+    // width: '100%',
+    // height: '100%',
+    // // overflowY: 'scroll',
+    // pr: '17px',
+    // boxSizing: 'content-box',
+    // background: '#ff00ff20'
+    // // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'space-between',
+    // maxWidth: 'none !important',
+  },
   nav: {
     mx: 'auto',
     display: 'none',
-    '@media screen and (min-width: 1465px)': {
+    '@media screen and (min-width: 1384px)': {
       display: 'block',
     },
     a: {

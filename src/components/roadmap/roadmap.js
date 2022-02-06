@@ -36,22 +36,82 @@ export default function Roadmap() {
             </Text>
             <Box sx={styles.textContentBoxInner_center}>
                 <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}> Deploy $GIV token’s Smart contract and dApp development</Heading>
+                    <Heading as="h2" sx={styles.description}>• DEPLOY $GIV TOKEN'S SMART CONTRACT AND DAPP DEVELOPMENT</Heading>
                 </Box>
             </Box>
             <Box sx={styles.textContentBoxInner_center}>
                 <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>Begin marketing</Heading>
+                    <Heading as="h2" sx={styles.description}>• BEGIN MARKETING</Heading>
                 </Box>
             </Box>           
             <Box sx={styles.textContentBoxInner_center}>
                 <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}> Deploy $GIV token’s Smart contract and dApp development</Heading>
+                    <Heading as="h2" sx={styles.description}>• CREATE PARTNERSHIP WITH CHARITIES FOR GIV'S FIRST POOL</Heading>
                 </Box>
             </Box>
             <Box sx={styles.textContentBoxInner_center}>
                 <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>Begin marketing</Heading>
+                    <Heading as="h2" sx={styles.description}>• LAUNCH PRE-SALE #1</Heading>
+                </Box>
+            </Box> 
+          </Box>
+        </Box>  
+      </Container>
+      <Container sx={styles.containerBox}>        
+
+        <Box sx={styles.contentBox_center}>
+          <Box sx={styles.contentBoxInner_center}>
+            <Text as="p" sx={styles.title_center}>
+              STAGE 2
+            </Text>
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• BEGIN HOSTING DISCORD AND TELEGRAM DISCUSSIONS / POLLS</Heading>
+                </Box>
+            </Box>
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• LAUNCH PRE-SALE #2</Heading>
+                </Box>
+            </Box>           
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• START THE FIRST "GIVING POOL"</Heading>
+                </Box>
+            </Box>
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• LAUNCH PRE-SALE #3</Heading>
+                </Box>
+            </Box> 
+          </Box>
+        </Box>  
+      </Container>
+      <Container sx={styles.containerBox}>        
+
+        <Box sx={styles.contentBox_center}>
+          <Box sx={styles.contentBoxInner_center}>
+            <Text as="p" sx={styles.title_center}>
+              STAGE 3
+            </Text>
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• CREATE COMMUNITY TO ACTIVELY SEEK AND SHARE CHARITIES FOR THE POOLL</Heading>
+                </Box>
+            </Box>
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• BEGIN PRE-SALE #4</Heading>
+                </Box>
+            </Box>           
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• HOST Q & A MEETS WITH LOCAL CHARITIES</Heading>
+                </Box>
+            </Box>
+            <Box sx={styles.textContentBoxInner_center}>
+                <Box sx={styles.containerBox_left}>
+                    <Heading as="h2" sx={styles.description}>• LAUNCH $GIV PUBLIC SALE</Heading>
                 </Box>
             </Box> 
           </Box>
@@ -198,14 +258,14 @@ const styles = {
     pb: [0, 7, 0, null, 7],
     width : '100%',
     maxWidth: [
-        '90%',
+        '96%',
         null,
         null,
-        '90%',
-        '90%',
-        '90%',
+        '96%',
+        '96%',
+        '96%',
         null,
-        '90%',
+        '96%',
       ],
   },
 };

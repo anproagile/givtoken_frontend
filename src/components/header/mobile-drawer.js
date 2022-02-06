@@ -97,7 +97,7 @@ const styles = {
     flexShrink: '0',
     width: '26px',
 
-    '@media screen and (min-width: 1465px)': {
+    '@media screen and (min-width: 1384px)': {
       display: 'none',
     },
   },

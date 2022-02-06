@@ -42,10 +42,10 @@ export default function PoolTrending() {
                 </Box>
                 
                 <Text as="p" sx={styles.description_left}>
-                    $GIV TOKEN ADDRESS:<br/>0x764cF690A710853B4ac02A3d48cb1<br/><br/>$GIVE IS CREATED WITH A TAX STRUCTURE THAT ENABLE A CONSTANT FLOW OF FUNDRAISING AND REWARDS.<br/><br/>
+                    $GIV TOKEN ADDRESS:<br/>0X764CF690A710853B4AC02A3D48CB12C12EB18F4A<br/><br/>$GIVE IS CREATED WITH A TAX STRUCTURE THAT ENABLE A CONSTANT FLOW OF FUNDRAISING AND REWARDS.<br/><br/>
                     10% TRANSACTION FEE - THIS FEE GETS SPLIT UP AND REDISTRIBUTED.<br/><br/>
-                    • 5% TO BE CONVERTED TO ETH AND FUND TO THE GIVING POOL<br/><br/>
-                    • 5% TO BE CONVERTED TO USDT AND DISTRIBUTED INTO THE WALLETS OF $GIV HOLDERS<br/><br/>
+                    &nbsp;• 5% TO BE CONVERTED TO ETH AND FUND TO THE GIVING POOL<br/><br/>
+                    &nbsp;• 5% TO BE CONVERTED TO USDT AND DISTRIBUTED INTO THE WALLETS OF $GIV HOLDERS<br/><br/>
                     A LOCKED GIVEAWAY WALLET IS CREATED TO EARN REWARDS AND HOST GIVEAWAYS / AIRDROPS THROUGHOUT THE COMMUNITY<br/><br/>                    
                 </Text>
         </Box>
@@ -132,7 +132,7 @@ const styles = {
         width: '30%',
         height: '100%',  
         pt: [0, 1, 0, null, 1],
-        px: [0, 2, 0, null, 2],
+        px: [0, 4, 0, null, 4],
   
     },
     containerBox_left: {
@@ -152,6 +152,8 @@ const styles = {
         letterSpacing: ['1px', null, '1px'],
         lineHeight: [1.3, null, null, 1.25],
         px: [0, null, 2],
+        textShadow: '3px 3px #00000040',
+
     },
     title_left_red: {
         fontFamily: 'body',
@@ -236,6 +238,8 @@ const styles = {
         ml: 'auto',
         py: '3%',
         mb: '4%',
+        textShadow: '3px 3px #00000040',
+
     },
 
     description: {
