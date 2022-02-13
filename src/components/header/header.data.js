@@ -41,7 +41,7 @@ export default {
     },
     {
       onclick: '',
-      path: '',
+      path: 'pricing',
       label: 'TOKENOMICS',
     },
     // {

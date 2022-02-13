@@ -180,7 +180,17 @@ export default function Header({ className }) {
             >
               TOKENOMICS
             </Button>
-
+            <Link
+                activeClass="active"
+                to={'whitepaper'}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                key={0}
+              >
+                pricing 
+            </Link>
             {/* {headerData.menuItems.map(({ onclick,path, label }, i) => (
                 
               

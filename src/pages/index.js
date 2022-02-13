@@ -43,6 +43,7 @@ export default function IndexPage() {
             <PoolTarget />
             <PoolTrending />
             {/* <PreviousDonations /> */}
+            <TestimonialCard />
             <PrevDonations />
             {/* <KeyFeature />
             <ServiceSection />
@@ -54,7 +55,7 @@ export default function IndexPage() {
             <TestimonialCard />
             <BlogSection />
             <Subscribe /> */}
-            {/* <WhitePaper /> */}
+            <WhitePaper />
           </Layout>
         </StickyProvider>
       </ThemeProvider>

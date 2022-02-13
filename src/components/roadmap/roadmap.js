@@ -10,21 +10,6 @@ export default function Roadmap() {
   // 2. Hold a status in state to handle the response from our API.
   const [status, setStatus] = useState({    
   });
-  const subscribe = async (e) => {
-    e.preventDefault();
-    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-
-    // 3. Send a request to our API with the user's email address.
-    const res = await fetch('/api/subscribe', {
-      body: JSON.stringify({
-        email: inputEl.current.value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    });    
-  };
   return (
     <section>
       <Container sx={styles.containerBox}>        
