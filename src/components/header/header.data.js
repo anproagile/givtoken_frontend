@@ -31,17 +31,17 @@ export default {
   menuItems: [
     {
       onclick: '',
-      path: '',
+      path: 'roadmap',
       label: 'ROADMAP',
     },
     {
       onclick: '',
-      path: '',
+      path: 'whitepaper',
       label: 'WHITEPAPER',
     },
     {
       onclick: '',
-      path: 'pricing',
+      path: 'prevdonations',
       label: 'TOKENOMICS',
     },
     // {

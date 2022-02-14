@@ -22,6 +22,7 @@ import PoolTarget from '../sections/pool-target';
 import PoolTrending from '../sections/pool-trending';
 
 import WhitePaper from '../sections/white-paper';
+import RoadMap from '../sections/roadmap';
 
 import { AnimatedModalStack } from '@mattjennings/react-modal'
 // import { tailwind } from '@theme-ui/presets'
@@ -43,7 +44,7 @@ export default function IndexPage() {
             <PoolTarget />
             <PoolTrending />
             {/* <PreviousDonations /> */}
-            <TestimonialCard />
+            {/* <TestimonialCard /> */}
             <PrevDonations />
             {/* <KeyFeature />
             <ServiceSection />
@@ -55,6 +56,7 @@ export default function IndexPage() {
             <TestimonialCard />
             <BlogSection />
             <Subscribe /> */}
+            <RoadMap />
             <WhitePaper />
           </Layout>
         </StickyProvider>

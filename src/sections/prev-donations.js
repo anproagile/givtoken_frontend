@@ -29,93 +29,34 @@ export default function PrevDonations() {
     });    
   };
   return (
-    <section>
-      <Container sx={styles.containerBox}>        
-
-        <Box sx={styles.contentBox_center}>
-          <Box sx={styles.contentBoxInner_center}>
-            <Text as="p" sx={styles.title_center}>
-              PREVIOUS DONATIONS
-            </Text>
-            <Box sx={styles.textContentBoxInner_center}>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>POOL DATE :</Heading>
-                    <Heading as="h2" sx={styles.description_red}> FEBRUARY 20TH, 2022</Heading>
-                </Box>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>| POOL SIZE : </Heading>
-                    <Heading as="h2" sx={styles.description_red}>10 ETH</Heading>
-                </Box>
-                <br/>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>RECIPIENT :</Heading>
-                    <Heading as="h2" sx={styles.description_red}>CHARITY NAME</Heading>
-                </Box>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>POOL DATE :</Heading>
-                    <Heading as="h2" sx={styles.description_red}> FEBRUARY 20TH, 2022</Heading>
-                </Box>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>| POOL SIZE : </Heading>
-                    <Heading as="h2" sx={styles.description_red}>10 ETH</Heading>
-                </Box>
-                <br/>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>RECIPIENT :</Heading>
-                    <Heading as="h2" sx={styles.description_red}>CHARITY NAME</Heading>
-                </Box>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>POOL DATE :</Heading>
-                    <Heading as="h2" sx={styles.description_red}> FEBRUARY 20TH, 2022</Heading>
-                </Box>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>| POOL SIZE : </Heading>
-                    <Heading as="h2" sx={styles.description_red}>10 ETH</Heading>
-                </Box>
-                <br/>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>RECIPIENT :</Heading>
-                    <Heading as="h2" sx={styles.description_red}>CHARITY NAME</Heading>
-                </Box>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>POOL DATE :</Heading>
-                    <Heading as="h2" sx={styles.description_red}> FEBRUARY 20TH, 2022</Heading>
-                </Box>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>| POOL SIZE : </Heading>
-                    <Heading as="h2" sx={styles.description_red}>10 ETH</Heading>
-                </Box>
-                <br/>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>RECIPIENT :</Heading>
-                    <Heading as="h2" sx={styles.description_red}>CHARITY NAME</Heading>
-                </Box>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>POOL DATE :</Heading>
-                    <Heading as="h2" sx={styles.description_red}> FEBRUARY 20TH, 2022</Heading>
-                </Box>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>| POOL SIZE : </Heading>
-                    <Heading as="h2" sx={styles.description_red}>10 ETH</Heading>
-                </Box>
-                <br/>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.description}>RECIPIENT :</Heading>
-                    <Heading as="h2" sx={styles.description_red}>CHARITY NAME</Heading>
-                </Box>
-            </Box>
-              
-          </Box>
-        </Box>  
-      </Container>
+    <section id="prevdonations" sx={{ variant: 'section.prevdonations' }}>
+     <section class="donations" id="donations">
+        <div class="c-grid">
+          <div class="donations__wrapper">
+            <div class="roadmap__block">
+              <h3 class="roadmap__block-title">Previous donations</h3>
+              <ul class="roadmap__box">
+                <li>
+                  <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
+                  <p>recipient: <span>charity Name</span></p>
+                </li>
+                <li>
+                  <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
+                  <p>recipient: <span>charity Name</span></p>
+                </li>
+                <li>
+                  <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
+                  <p>recipient: <span>charity Name</span></p>
+                </li>
+                <li>
+                  <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
+                  <p>recipient: <span>charity Name</span></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
@@ -210,7 +151,7 @@ const styles = {
       position: 'relative',
       transform: 'translate(0%, -80%)',      
       width: ['60%', null, '60%', '60%'],
-      borderRadius: 30,
+      borderRadius: 50,
       background: 'linear-gradient(270.17deg, #1C337E 14.88%, #F9FAFF 89.04%, #F9FAFF 89.04%)',
       textAlign: 'center',
       fontFamily: 'body',

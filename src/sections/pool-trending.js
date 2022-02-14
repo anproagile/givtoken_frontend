@@ -30,103 +30,52 @@ export default function PoolTrending() {
   };
   return (
     <section>
-      <Container sx={styles.containerBox}>
-        
-        <Box sx={styles.contentBox_left}>
-                <Heading as="h2" sx={styles.title_left}>
-                    THE GIVING
-                </Heading>
-                <Box sx={styles.containerBox_left}>
-                    <Heading as="h2" sx={styles.title_left}>TOKEN :</Heading>
-                    <Heading as="h2" sx={styles.title_left_red}>$GIV</Heading>
-                </Box>
-                
-                <Text as="p" sx={styles.description_left}>
-                    $GIV TOKEN ADDRESS:<br/>0X764CF690A710853B4AC02A3D48CB12C12EB18F4A<br/><br/>$GIVE IS CREATED WITH A TAX STRUCTURE THAT ENABLE A CONSTANT FLOW OF FUNDRAISING AND REWARDS.<br/><br/>
-                    10% TRANSACTION FEE - THIS FEE GETS SPLIT UP AND REDISTRIBUTED.<br/><br/>
-                    &nbsp;• 5% TO BE CONVERTED TO ETH AND FUND TO THE GIVING POOL<br/><br/>
-                    &nbsp;• 5% TO BE CONVERTED TO USDT AND DISTRIBUTED INTO THE WALLETS OF $GIV HOLDERS<br/><br/>
-                    A LOCKED GIVEAWAY WALLET IS CREATED TO EARN REWARDS AND HOST GIVEAWAYS / AIRDROPS THROUGHOUT THE COMMUNITY<br/><br/>                    
-                </Text>
-        </Box>
-
-        <Box sx={styles.contentBox_center}>
-          <Box sx={styles.contentBoxInner_center}>
-            <Text as="p" sx={styles.title_center}>
-              POOL CANDIDATES
-            </Text>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                CANDIDATE NAME AND DESCRIPTION
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                CANDIDATE NAME AND DESCRIPTION
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                CANDIDATE NAME AND DESCRIPTION
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                CANDIDATE NAME AND DESCRIPTION
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                CANDIDATE NAME AND DESCRIPTION
-              </Text>
-            </Box>            
-          </Box>
-        </Box>   
-        <Box sx={styles.contentBox_center}>
-          <Box sx={styles.contentBoxInner_center}>
-            {/* <Box sx={styles.title_center_box}> */}
-                <Text as="p" sx={styles.title_center}>
-                    TRENDING ON GIV
-                </Text>
-            {/* </Box> */}
-
-            
-            
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                ARTICLE AND NAME DESCRIPTION:
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                ARTICLE AND NAME DESCRIPTION:
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                ARTICLE AND NAME DESCRIPTION:
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                ARTICLE AND NAME DESCRIPTION:
-              </Text>
-            </Box>
-            <Box sx={styles.textContentBoxInner_center}>
-              <Text as="p" sx={styles.description}>
-                ARTICLE AND NAME DESCRIPTION:
-              </Text>
-            </Box>            
-          </Box>
-        </Box>  
-      </Container>
+      <section class="token" id="token">
+        <div class="c-grid">
+          <div class="token__wrapper">
+            <div class="token__wrapper-left">
+              <h2 class="token__title">the giving Token: <span>$GIV</span></h2>
+              <div class="token__section">
+                <p>$GIV Token Address: 0x764cF690A710853B4ac02A3d48cb12c12eB18f4A</p>
+                <p>$GIV is created with a Tax structure that enables a constant flow of fundraising and rewards.</p>
+                <p>10% transaction fee – This fee gets split up and redistributed.</p>
+                <p>5% to be converted to ETH and fund to the Giving Pool</p>
+                <p>5% to be converted to USDT and distributed into the wallets of $GIV holders</p>
+                <p>A locked Giveaway wallet is created to earn rewards and host giveaways / airdrops throughout the community.</p>
+              </div>
+            </div>
+            <div class="token__wrapper-middle">
+              <div class="roadmap__block">
+                <h3 class="roadmap__block-title">Pool Candidates</h3>
+                <ul class="roadmap__box">
+                  <li>Candidate name (link to site) and description</li>
+                  <li>Candidate name (link to site) and description</li>
+                  <li>Candidate name (link to site) and description</li>
+                  <li>Candidate name (link to site) and description</li>
+                  <li>Candidate name (link to site) and description</li>
+                </ul>
+              </div>
+            </div>
+            <div class="token__wrapper-right">
+              <div class="roadmap__block">
+                <h3 class="roadmap__block-title">Trending on GIV</h3>
+                <ul class="roadmap__box">
+                  <li>Article name and description:</li>
+                  <li>Article name and description:</li>
+                  <li>Article name and description:</li>
+                  <li>Article name and description:</li>
+                  <li>Article name and description:</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
 
 const styles = {
-    
-
     contentBox_left: {
         backgroundColor: 'transparent',
         width: '30%',

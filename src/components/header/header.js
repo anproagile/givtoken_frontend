@@ -13,8 +13,9 @@ import ScrollView from '@mattjennings/react-modal/'
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 // import Web3 from "web3";
+import icon_Logo from '../../img/logo.svg';
 
-import Roadmap from '../roadmap/roadmap';
+// import Roadmap from '../roadmap/roadmap';
 import NextLink from 'next/link'
 import RoadmapModal from 'components/roadmap/roadmap-modal';
 
@@ -112,8 +113,8 @@ export default function Header({ className }) {
     checkWalletIsConnected();
   }, [])
 
-  const openPancake = () => {
-    window.open('https://pancakeswap.finance/', '_blank');
+  const openUniswap = () => {
+    window.open('https://app.uniswap.org/', '_blank');
   }
   const openModal = () => {
     setStatus({
@@ -137,134 +138,35 @@ export default function Header({ className }) {
 
   return (
     <DrawerProvider>
-      
-      <header sx={styles.header} className={className} id="header">
-        <Container sx={styles.container}>
-
-          <Logo src={GIV_LOGO} path={'/'} />  
-          
-          <Button
-            className="title__btn"
-            variant="headerButton"
-            aria-label="The Giving Pool"
-          >
-            THE GIVING POOL
-          </Button>
-
-
-          {/* {headerData.socialItems.map(({ path, label, iconSrc }, i) => (
-               <Logo src={iconSrc} path={path} />
-          ))} */}
-
-          <Flex as="nav" sx={styles.nav}>
-            <Button
-              className="connectwallet__btn"
-              variant="headerMenuButton"
-              // onClick={onclick}
-              onClick={openModal}
-              // aria-label={label}
-            >
-              ROADMAP
-            </Button>
-
-            <Button
-              className="connectwallet__btn"
-              variant="headerMenuButton"
-            >
-              WHITEPAPER
-            </Button>
-
-            <Button
-              className="connectwallet__btn"
-              variant="headerMenuButton"
-            >
-              TOKENOMICS
-            </Button>
-            <Link
-                activeClass="active"
-                to={'whitepaper'}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={0}
-              >
-                pricing 
-            </Link>
-            {/* {headerData.menuItems.map(({ onclick,path, label }, i) => (
-                
-              
-              // <Link
-              //   activeClass="active"
-              //   to={path}
-              //   spy={true}
-              //   smooth={true}
-              //   offset={-70}
-              //   duration={500}
-              //   key={i}
-              // >
-              //   {label} 
-              // </Link>
-            ))} */}
-          </Flex>
-
-          <Button
-            className="connectwallet__btn"
-            variant="headerButton"
-            aria-label="Chart"
-          >
-            CHART
-          </Button>
-          <Button
-            className="connectwallet__btn"
-            variant="headerButton"
-            onClick={openPancake}
-            aria-label="Buy on Pancake Swap"
-            >
-            BUY ON PANCAKE SWAP
-          </Button>
-          <Button
-            className="connectwallet__btn"
-            variant="headerButton"
-            onClick={connectWalletHandler}
-            aria-label="Connect Wallet"
-          >
-            CONNECT WALLET
-          </Button>
-
-          <MobileDrawer />
-        </Container>
-      </header>
-
-      <Modal sx={styles.modals} open={status.show}>
-      {/* {({ onClose }) => ( */}
-        <>
-          
-          {/* <ModalTitle>
-            <Text
-              sx={{
-                fontSize: 2,
-                fontWeight: 'medium',
-              }}
-            >
-              Hello!
-            </Text>
-          </ModalTitle> */}
-          {/* <ModalContent sx={styles.modalContent}> */}
-            <Container sx={styles.container_modal}>
-              <Container sx={styles.container_modal_inner}>
-                  {/* <ModalFooter>
-                    <Button onClick={onClose}>OK</Button>
-                  </ModalFooter> */}
-                  <Roadmap></Roadmap>
-                  <Button sx={styles.continue_button} onClick={onClose}>CONTINUE TO<br />WEBSITE &gt;</Button>
-              </Container>
-            </Container>
-          {/* </ModalContent> */}
-          
-        </>
-      {/* )} */}
-    </Modal>
+      <header className={className} id="header">
+      <nav class="header" id="header" sx={styles.header}>
+        <div class="c-grid-fluid">
+          <div class="header__wrapper">
+            <div class="header__wrapper-left">
+              <div>
+                <div class="logo logo--header"><a class="logo__btn" href=""><img src={icon_Logo} alt=""></img></a></div>
+                <div class="c-btn__wrapper"><a class="c-btn" href="#"><span>THE GIVING pool</span></a></div>
+              </div>
+              <div>
+                <div class="hamburger hamburger--squeeze" role="button" hamburger-js="hamburger-js">
+                  <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__wrapper-mobile" mobile-block-js>
+              <div class="header__wrapper-middle">
+                <mav class="header__nav"><a href="#">Roadmap</a><a href="#">WHITEPAPER</a><a href="#">Tokenomics</a></mav>
+              </div>
+              <div class="header__wrapper-right">
+                <div class="c-btn__wrapper"><a class="c-btn" href="#"><span>chart</span></a><a class="c-btn" href="#"><span>buy on pancake swap</span></a><a class="c-btn" href="#"><span>COnnect wallet</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
     </DrawerProvider>
   );
 }
@@ -397,19 +299,6 @@ const styles = {
   container_modal_inner: {
     height: '98vh !important',
     pb: '5vh',
-    // px: '1rem',
-    // flexGrow: 1,
-    // overflowY: 'scroll',
-    // width: '100%',
-    // height: '100%',
-    // // overflowY: 'scroll',
-    // pr: '17px',
-    // boxSizing: 'content-box',
-    // background: '#ff00ff20'
-    // // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'space-between',
-    // maxWidth: 'none !important',
   },
   nav: {
     mx: 'auto',
@@ -419,7 +308,7 @@ const styles = {
     },
     a: {
       fontSize: 4,
-      fontWeight: 'body',
+      fontWeight: '500',
       fontFamily: 'headerButton',
       px: 5,
       cursor: 'pointer',
@@ -430,8 +319,10 @@ const styles = {
         color: '#00ffff',
       },
       '&.active': {
-        color: '#FFFFFF',
+        color: '#F53548',
       },
     },
   },
+
+
 };

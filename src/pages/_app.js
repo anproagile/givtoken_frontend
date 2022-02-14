@@ -5,6 +5,9 @@ import 'react-multi-carousel/lib/styles.css';
 import 'react-modal-video/css/modal-video.min.css';
 import 'rc-drawer/assets/index.css';
 import 'typeface-dm-sans';
+import '../css/app.css';
+import '../css/app.min.css';
+
 
 export default function CustomApp({ Component, pageProps }) {
   useEffect(() => {

@@ -7,10 +7,16 @@ import { Container, Flex, Box, Button, Input, Text, Heading } from 'theme-ui';
 import Logo from 'components/logo';
 import headerData from 'components/header/header.data';
 import pool_icon from 'assets/pool_icon.svg';
-
-
-// import Logo_target from 'assets/logo_target.svg';
 import Logo_target from 'assets/circle_bg.png';
+
+
+import IMG_Platform from 'img/img-platform.png';
+import IMG_Platform_2x from 'img/img-platform@2x.png';
+import DiscordIcon  from 'img/discord.svg';
+import TelegramIcon from 'img/telegram.svg';
+import TwitterIcon from 'img/twitter.svg';
+import InstagramIcon from 'img/instagram.png';
+// import InstagramIcon_2x from 'img/instagram@2x.png';
 
 
 export default function PoolTarget() {
@@ -36,132 +42,86 @@ export default function PoolTarget() {
   };
   return (
     <section>
-      <Container sx={styles.containerBox}>
-        
-        <Box sx={styles.contentBox_left}>
-                <Heading as="h2" sx={styles.title_left}>
-                    THE GIVING
-                </Heading>
-                <Heading as="h2" sx={styles.title_left}>PLATFORM</Heading>
-                <Text as="p" sx={styles.description_left}>
-                  THE GIVING POOL RAISES FUNDING FOR WORTHY AND CHARITABLE FOUNDATIONS - HANDPICKED BY $GIV HOLDERS.<br/><br/>
-                  $GIV HOLDERS CAN CONNECT THEIR WALLETS TO VERIFY OWNERSHIP OF THE $GIV TOKEN. TOKEN HOLDERS
-                  CAN PARTICIPATE IN THE “POOLS” VOTING TALLY. WHEN THE POOLS “TARGET VALUE” IS REACHED, THE
-                  HIGHEST NOMINATED WILL RECEIVE A DONATION OF THE POOLS BALANCE. <br/><br/>
-                  ALONGSIDE PARTICIPATING IN THE VOTING TALLY, THE $GIV TOKEN REWARDS HOLDERS WITH USDT AND
-                  ENTERS THEM IN A CHANCE FOR GIVEAWAYS.<br/><br/>
-                  LEARN MORE ABOUT THE GIV PLATFORM AND PARTICIPATE IN THE: DONATION, REWARD & GIVEAWAY ASPECTS – ON OUR DISCORD & SOCIAL MEDIA.<br/><br/>                    
-                </Text>
-                <Box sx={styles.containerBox_left}>
-                    {headerData.socialItems.map(({ path, label, iconSrc }, i) => (
-                        <a target="_blank" href={path}><img src={iconSrc} /></a>
-
-                    ))} 
-                </Box>
-        </Box>
-
-        <Box sx={styles.contentBox_center}>
-          <Box sx={styles.contentBoxInner_center}>
-            <Text as="p" sx={styles.title_center}>
-              THE GIVING POOL
-            </Text>
-            <Box sx={styles.contentBox_target}>           
-                  <Container sx={styles.containerBox_target}>
-                      <Container sx={styles.containerBox_target_split}>
-                          <Box  sx={styles.contentBoxInner1}>
-                            <Box  sx={styles.contentBox_Targetvalue_Outer}>
-                              <Box  sx={styles.contentBox_Targetvalue_Inner}>
-                                  <Text as="p" sx={styles.text_target_blue}>
-                                      TARGET VALUE:
-                                  </Text>
-                                  <Text as="p" sx={styles.text_target_red}>
-                                      10 ETH
-                                  </Text>
-                              </Box> 
-                            </Box> 
-                            <Box  sx={styles.contentBox_Currentvalue_Outer}>
-                              <Box  sx={styles.contentBox_Currentvalue_Inner}>
-                                <Text as="p" sx={styles.text_target_blue}>
-                                    CURRENT VALUE:
-                                </Text>
-                                <Text as="p" sx={styles.text_target_red}>
-                                    5 ETH
-                                </Text>
-                              </Box> 
-                            </Box>   
-                          </Box> 
-                          <Box  sx={styles.contentBox_Remaining_Outer}>
-                            <Box  sx={styles.contentBox_Remaining_Inner}>
-                                <Text as="p" sx={styles.text_target_blue}>
-                                    REMAINING:
-                                </Text>
-                                <Text as="p" sx={styles.text_target_red}>
-                                    5 ETH
-                                </Text>
-                            </Box>
-                          </Box>                                        
-                      </Container>
-                      <Box  sx={styles.contentBox_target_Circle}>
-                          
-                          <Box  sx={styles.contentBox_Circle}>
-                              {/* <Logo sx={styles.logo} src={pool_icon} path={'/'} /> */}
-                          </Box>
-
-                          <Text as="p" sx={styles.charityname_red}>
-                             POOL #001 
-                          </Text>
-                      </Box>               
-                  </Container>
-
-                  <Text as="p" sx={styles.charityname}>
-                          TALLY CANDIDATES   
-                  </Text>
-                  <Container sx={styles.containerBox_charity}>                
-                      <Box sx={styles.contentBox_charity_rightborder}>                    
-                          <Text as="p" sx={styles.charityname}>
-                              CHARITY <br/>NAME1 
-                          </Text>     
-                          <Text as="p" sx={styles.percentage_blue}>
-                              15,567 
-                          </Text>               
-                      </Box>
-                      <Box sx={styles.contentBox_charity_rightborder}>                    
-                          <Text as="p" sx={styles.charityname}>
-                              CHARITY <br/>NAME2 
-                          </Text>       
-                          <Text as="p" sx={styles.percentage_red}>
-                              15,567 
-                          </Text>             
-                      </Box>
-                      <Box sx={styles.contentBox_charity_rightborder}>                    
-                          <Text as="p" sx={styles.charityname}>
-                              CHARITY <br/>NAME3 
-                          </Text>     
-                          <Text as="p" sx={styles.percentage_blue}>
-                              15,567 
-                          </Text>               
-                      </Box>
-                      <Box sx={styles.contentBox_charity_rightborder}>                    
-                          <Text as="p" sx={styles.charityname}>
-                              CHARITY <br/>NAME4 
-                          </Text>   
-                          <Text as="p" sx={styles.percentage_red}>
-                              15,567 
-                          </Text>                 
-                      </Box>
-                      <Box sx={styles.contentBox_charity}>                    
-                          <Text as="p" sx={styles.charityname}>
-                              CHARITY <br/>NAME5 
-                          </Text>      
-                          <Text as="p" sx={styles.percentage_blue}>
-                              15,567 
-                          </Text>              
-                      </Box>
-                  </Container>
-            </Box>           
-          </Box>
-        </Box> 
-      </Container>
+      <section class="platform" id="platform">
+        <div class="c-grid">
+          <div class="platform__wrapper">
+            <div class="platform__wrapper-left">
+              <h1 class="platform__title">the giving platform</h1>
+              <div class="platform__section">
+                <p>The Giving Pool raises funding for  worthy and charitable foundations - handpicked by $GIV holders.</p>
+                <p>$GIV holders can connect their wallets to verify ownership of the $GIV Token. Token holders can participate in the “Pools” voting tally. When the pools “Target Value” is reached, the highest nominated will receive a donation of the pools balance.</p>
+                <p>Alongside participating in the voting tally, The $GIV Token rewards holders with USDT and enters them in a chance for giveaways.</p>
+                <p>Learn more about The GIV Platform and participate in the: Donation, Reward & Giveaway aspects – on our Discord & Social Media.</p>
+              </div>
+              <ul class="footer__social">
+                <li><a target="_blank" href="https://discord.gg/dYuWzKd5"><img src={DiscordIcon} alt=""></img></a></li>
+                <li><a target="_blank" href="https://t.me/TheGivingPool"><img src={TelegramIcon} alt=""></img></a></li>
+                <li><a target="_blank" href="https://mobile.twitter.com/givingpool"><img src={TwitterIcon} alt=""></img></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/thegivingpool.io/"><img src={InstagramIcon} alt=""></img></a></li>
+              </ul>
+            </div>
+            <div class="platform__wrapper-right">
+              <div class="roadmap__block">
+                <h1 class="roadmap__block-title">The Giving <br/>Pool</h1>
+                <div class="platform__box">
+                  <div>
+                    <ul class="platform__list">
+                      <li>
+                        <div>
+                          <p>Target Value:</p><span>10 ETH</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <p>Remaining:</p><span>5 ETH</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <p>CURRENT VALUE:</p><span>5 ETH</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div><img src={IMG_Platform} srcset={IMG_Platform_2x} alt=""></img>
+                    <p class="platform__box-name">Pool #001</p>
+                  </div>
+                </div>
+                <div class="platform__table-wrapper">
+                  <p class="platform__table-title">Tally Candidates</p>
+                  <div class="platform__table">
+                    <div>
+                      <div>
+                        <p>Charity <br/>name</p><span>8,965</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <p>Charity <br/>name</p><span>12,582</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <p>Charity <br/>name</p><span>3,327</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <p>Charity <br/>name</p><span><i>8,965</i></span>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <p>Charity <br/>name</p><span>6,174</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
@@ -262,7 +222,7 @@ const styles = {
   title_center: {
       transform: 'translate(0%, -80%)',
       width: ['60%', null, '60%', '60%'],
-      borderRadius: 30,
+      borderRadius: 50,
       background: 'linear-gradient(270.17deg, #1C337E 14.88%, #F9FAFF 89.04%, #F9FAFF 89.04%)',
       textAlign: 'center',
       fontFamily: 'body',
