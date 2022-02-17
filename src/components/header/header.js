@@ -138,36 +138,138 @@ export default function Header({ className }) {
 
   return (
     <DrawerProvider>
-      <header className={className} id="header">
-      <nav class="header" id="header" sx={styles.header}>
-        <div class="c-grid-fluid">
-          <div class="header__wrapper">
-            <div class="header__wrapper-left">
-              <div>
-                <div class="logo logo--header"><a class="logo__btn" href=""><img src={icon_Logo} alt=""></img></a></div>
-                <div class="c-btn__wrapper"><a class="c-btn" href="#"><span>THE GIVING pool</span></a></div>
-              </div>
-              <div>
-                <div class="hamburger hamburger--squeeze" role="button" hamburger-js="hamburger-js">
-                  <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="header__wrapper-mobile" mobile-block-js>
-              <div class="header__wrapper-middle">
-                <mav class="header__nav"><a href="#">Roadmap</a><a href="#">WHITEPAPER</a><a href="#">Tokenomics</a></mav>
-              </div>
-              <div class="header__wrapper-right">
-                <div class="c-btn__wrapper"><a class="c-btn" href="#"><span>chart</span></a><a class="c-btn" href="#"><span>buy on pancake swap</span></a><a class="c-btn" href="#"><span>COnnect wallet</span></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      
+    <header sx={styles.header} className={className} id="header">
+      <Container sx={styles.container}>
+
+        <Logo src={GIV_LOGO} path={'/'} />  
+        
+        <Button
+          className="title__btn"
+          variant="headerButton"
+          aria-label="The Giving Pool"
+        >
+          THE GIVING POOL
+        </Button>
+
+
+        {/* {headerData.socialItems.map(({ path, label, iconSrc }, i) => (
+             <Logo src={iconSrc} path={path} />
+        ))} */}
+
+        <Flex as="nav" sx={styles.nav}>
+          {/* <Button
+            className="connectwallet__btn"
+            variant="headerMenuButton"
+            // onClick={onclick}
+            onClick={openModal}
+            // aria-label={label}
+          >
+            ROADMAP
+          </Button>
+
+          <Button
+            className="connectwallet__btn"
+            variant="headerMenuButton"
+          >
+            WHITEPAPER
+          </Button>
+
+          <Button
+            className="connectwallet__btn"
+            variant="headerMenuButton"
+          >
+            TOKENOMICS
+          </Button> */}
+
+
+          {/* <Link
+              activeClass="active"
+              to={'roadmap'}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              key={0}
+            >
+              ROADMAP 
+          </Link>
+          <Link
+              activeClass="active"
+              to={'whitepaper'}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              key={0}
+            >
+              WHITEPAPER 
+          </Link>
+          <Link
+              activeClass="active"
+              to={'whitepaper'}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              key={0}
+            >
+              TOKENOMICS 
+          </Link> */}
+          {headerData.menuItems.map(({ onclick,path, label }, i) => (
+            <Link
+              activeClass="active"
+              to={path}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              key={i}
+            >
+              {label} 
+            </Link>
+          ))}
+        </Flex>
+
+        <Button
+          className="connectwallet__btn"
+          variant="headerButton"
+          aria-label="Chart"
+        >
+          CHART
+        </Button>
+        <Button
+          className="connectwallet__btn"
+          variant="headerButton"
+          onClick={openUniswap}
+          aria-label="Buy on UniSwap"
+          >
+          BUY ON UNISWAP
+        </Button>
+        <Button
+          className="connectwallet__btn"
+          variant="headerButton"
+          onClick={connectWalletHandler}
+          aria-label="Connect Wallet"
+        >
+          CONNECT WALLET
+        </Button>
+
+        <MobileDrawer />
+      </Container>
     </header>
-    </DrawerProvider>
+
+    {/* <Modal sx={styles.modals} open={status.show}>
+      <>         
+          <Container sx={styles.container_modal}>
+            <Container sx={styles.container_modal_inner}>                 
+                <Roadmap></Roadmap>
+                <Button sx={styles.continue_button} onClick={onClose}>CONTINUE TO<br />WEBSITE &gt;</Button>
+            </Container>
+          </Container>          
+      </>
+    </Modal> */}
+  </DrawerProvider>
   );
 }
 
