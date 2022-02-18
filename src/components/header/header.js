@@ -30,7 +30,7 @@ import styled from "styled-components";
 
 export default function Header({ className }) {
 
-  const [currentAccount, setCurrentAccount] = useState(null);
+  const [currentAccount, setCurrentAccount] = useState("Connect Wallet");
 
   const [showModal, setShowModal] = useState(false);
 
@@ -57,6 +57,7 @@ export default function Header({ className }) {
     const accounts = await ethereum.request({ method: 'eth_accounts' });
 
     if (accounts.length !== 0) {
+
       setStatus({
         isConnected: true,
         connecting: false,
@@ -72,6 +73,7 @@ export default function Header({ className }) {
         info: { error: false, msg: "disconnected" },
       });
       console.log("No authorized account found");
+      setCurrentAccount("Connect Wallet");
 
     }
   }
@@ -79,6 +81,7 @@ export default function Header({ className }) {
   const connectWalletHandler = async () => {
     const { ethereum } = window;
 
+    console.log('connect wallet clicked');
     if (!ethereum) {
       alert("Please install Metamask!");
     }
@@ -115,6 +118,7 @@ export default function Header({ className }) {
 
   const openUniswap = () => {
     window.open('https://app.uniswap.org/', '_blank');
+    return true;
   }
   const openModal = () => {
     setStatus({
@@ -138,138 +142,78 @@ export default function Header({ className }) {
 
   return (
     <DrawerProvider>
-      
-    <header sx={styles.header} className={className} id="header">
-      <Container sx={styles.container}>
-
-        <Logo src={GIV_LOGO} path={'/'} />  
-        
-        <Button
-          className="title__btn"
-          variant="headerButton"
-          aria-label="The Giving Pool"
-        >
-          THE GIVING POOL
-        </Button>
-
-
-        {/* {headerData.socialItems.map(({ path, label, iconSrc }, i) => (
-             <Logo src={iconSrc} path={path} />
-        ))} */}
-
-        <Flex as="nav" sx={styles.nav}>
-          {/* <Button
-            className="connectwallet__btn"
-            variant="headerMenuButton"
-            // onClick={onclick}
-            onClick={openModal}
-            // aria-label={label}
-          >
-            ROADMAP
-          </Button>
-
-          <Button
-            className="connectwallet__btn"
-            variant="headerMenuButton"
-          >
-            WHITEPAPER
-          </Button>
-
-          <Button
-            className="connectwallet__btn"
-            variant="headerMenuButton"
-          >
-            TOKENOMICS
-          </Button> */}
-
-
-          {/* <Link
-              activeClass="active"
-              to={'roadmap'}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              key={0}
-            >
-              ROADMAP 
-          </Link>
-          <Link
-              activeClass="active"
-              to={'whitepaper'}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              key={0}
-            >
-              WHITEPAPER 
-          </Link>
-          <Link
-              activeClass="active"
-              to={'whitepaper'}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              key={0}
-            >
-              TOKENOMICS 
-          </Link> */}
-          {headerData.menuItems.map(({ onclick,path, label }, i) => (
-            <Link
-              activeClass="active"
-              to={path}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              key={i}
-            >
-              {label} 
-            </Link>
-          ))}
-        </Flex>
-
-        <Button
-          className="connectwallet__btn"
-          variant="headerButton"
-          aria-label="Chart"
-        >
-          CHART
-        </Button>
-        <Button
-          className="connectwallet__btn"
-          variant="headerButton"
-          onClick={openUniswap}
-          aria-label="Buy on UniSwap"
-          >
-          BUY ON UNISWAP
-        </Button>
-        <Button
-          className="connectwallet__btn"
-          variant="headerButton"
-          onClick={connectWalletHandler}
-          aria-label="Connect Wallet"
-        >
-          CONNECT WALLET
-        </Button>
-
-        <MobileDrawer />
-      </Container>
+      <header className={className} id="header">
+      <nav class="header" id="header" sx={styles.header}>
+        <div class="c-grid-fluid">
+          <div class="header__wrapper">
+            <div class="header__wrapper-left">
+              <div>
+                <div class="logo logo--header"><a class="logo__btn" href=""><img src={icon_Logo} alt=""></img></a></div>
+                <div class="c-btn__wrapper">
+                    {/* <Link
+                      // activeClass="active"
+                      to={'roadmap'}
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                      key={1}
+                    >
+                      The giving pool 
+                    </Link> */}
+                  <a class="c-btn" href="#roadmap">
+                    <span>THE GIVING pool</span>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="hamburger hamburger--squeeze" role="button" hamburger-js="hamburger-js">
+                  <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__wrapper-mobile" mobile-block-js>
+              <div class="header__wrapper-middle">
+                <mav class="header__nav">
+                  {headerData.menuItems.map(({ onclick,path, label }, i) => (
+                    <Link
+                      activeClass="active"
+                      to={path}
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                      key={i}
+                    >
+                      {label} 
+                    </Link>
+                  ))}
+                </mav>
+                {/* <mav class="header__nav"><a href="#">Roadmap</a><a href="#">WHITEPAPER</a><a href="#">Tokenomics</a></mav> */}
+              </div>
+              <div class="header__wrapper-right">
+                <div class="c-btn__wrapper">
+                  <a class="c-btn" href="#"><span>chart</span></a>
+                  <a class="c-btn" href="https://app.uniswap.org/" target="_blank"><span>buy on UniSwap</span></a>
+                  <a class="c-btn" onClick={connectWalletHandler}>
+                    <span>
+                        this.status.isConnected 
+                        ?
+                          ({currentAccount})
+                        :
+                          ({"Connect wallet"})                        
+                    </span>
+                  </a>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-
-    {/* <Modal sx={styles.modals} open={status.show}>
-      <>         
-          <Container sx={styles.container_modal}>
-            <Container sx={styles.container_modal_inner}>                 
-                <Roadmap></Roadmap>
-                <Button sx={styles.continue_button} onClick={onClose}>CONTINUE TO<br />WEBSITE &gt;</Button>
-            </Container>
-          </Container>          
-      </>
-    </Modal> */}
-  </DrawerProvider>
+    </DrawerProvider>
   );
 }
 

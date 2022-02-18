@@ -475,6 +475,7 @@ picture {
 .header {
   z-index: 999;
   position: fixed;
+  padding-top: 0px;
   top: 0;
   left: 0;
   width: 100%;
@@ -710,6 +711,7 @@ picture {
   -webkit-transition: width 0.3s ease-in-out;
   -o-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
+  color: #00ffff;
 }
 .header__nav a:before, .header__nav a:after {
   content: "";
@@ -728,6 +730,10 @@ picture {
 .header__nav a:after {
   right: 50%;
 }
+.header__nav a.active {
+  color: #F53548;
+}
+
 @media screen and (max-width: 1535px) {
   .header__nav a {
     margin-left: 10px;
@@ -849,7 +855,7 @@ picture {
 
 
 .platform {
-  padding-top: 170px;
+  padding-top: 200px;
   padding-bottom: 100px;
 }
 @media screen and (max-width: 1279px) {

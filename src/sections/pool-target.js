@@ -41,6 +41,7 @@ export default function PoolTarget() {
     });    
   };
   return (
+    
     <section>
       <section class="platform" id="platform">
         <div class="c-grid">
