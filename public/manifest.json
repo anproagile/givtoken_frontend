@@ -1,0 +1,16 @@
+{
+  "short_name": "ClubPhysique",
+  "name": "ClubPhysique",
+  "description": "ClubPhysique",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "128x125"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

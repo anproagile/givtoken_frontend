@@ -1,4 +1,14 @@
-# netlify.toml
 [build]
-  command = "next build && next export"
-  publish = "out"
+  [context.deploy-preview]
+    ignore = "if [[ $HEAD == *feature/* ]]; then exit 1; else exit 0; fi"
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+
+[[redirects]]
+  from = "/*.map"
+  to = "/404"
+  status = 404
