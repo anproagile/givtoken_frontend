@@ -1956,6 +1956,9 @@ picture {
           flex-direction: column;
   width: 100%;
 }
+.roadmap__box a{
+  color: white;
+}
 .roadmap__box li {
   position: relative;
   display: -webkit-box;

@@ -15,7 +15,7 @@ const Platform = () => {
                         </div>
                         <ul className="footer__social">
                             <li>
-                                <a href="https://discord.gg/dYuWzKd5" rel="noreferrer" target="_blank">
+                                <a href="https://discord.gg/4zDw4bGdke" rel="noreferrer" target="_blank">
                                     <img src="img/discord.svg" alt="" />
                                 </a>
                             </li>
@@ -49,12 +49,12 @@ const Platform = () => {
                                         </li>
                                         <li>
                                             <div>
-                                                <p>Remaining:</p><span>5 ETH</span>
+                                                <p>Remaining:</p><span>TBD</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <p>CURRENT VALUE:</p><span>5 ETH</span>
+                                                <p>CURRENT VALUE:</p><span>TBD</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -68,27 +68,27 @@ const Platform = () => {
                                 <div className="platform__table">
                                     <div>
                                         <div>
-                                            <p>Charity <br />name</p><span>8,965</span>
+                                            <p>WorldVision</p><span />
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <p>Charity <br />name</p><span>12,582</span>
+                                            <p>PeduliAnak</p><span />
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <p>Charity <br />name</p><span>3,327</span>
+                                            <p>the digital <br />Ukraine</p><span />
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <p>Charity <br />name</p><span><i>8,965</i></span>
+                                            <p>LunchBowl <br />Network</p><span><i /></span>
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <p>Charity <br />name</p><span>6,174</span>
+                                            <p>Matwproject</p><span />
                                         </div>
                                     </div>
                                 </div>

@@ -12,7 +12,7 @@ const Footer = () => {
           <h2 className="footer__title">The giving Pool</h2>
           <ul className="footer__social">
             <li>
-              <a href="https://discord.gg/dYuWzKd5" rel="noreferrer" target="_blank">
+              <a href="https://discord.gg/4zDw4bGdke" rel="noreferrer" target="_blank">
                 <img src="img/discord.svg" alt="" />
               </a>
             </li>

@@ -46,7 +46,7 @@ const config = {
       value: 'discord',
       icon: 'discord.svg',
       mobileIcon: 'discord-black.svg',
-      href: 'https://discord.gg/EUFSzWHUyb',
+      href: 'https://discord.gg/4zDw4bGdke',
     },
     // {
     //   name: 'instagram',

@@ -9,20 +9,20 @@ const Donations = () => {
                         <h3 className="roadmap__block-title">Previous donations</h3>
                         <ul className="roadmap__box">
                             <li>
-                                <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
-                                <p>recipient: <span>charity Name</span></p>
+                                <p>pool date: <span>Coming Soon</span> | pool size: <span>10 eth</span></p>
+                                <p>recipient: <span>Coming Soon</span></p>
                             </li>
                             <li>
-                                <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
-                                <p>recipient: <span>charity Name</span></p>
+                                <p>pool date: <span>Coming Soon</span> | pool size: <span>10 eth</span></p>
+                                <p>recipient: <span>Coming Soon</span></p>
                             </li>
                             <li>
-                                <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
-                                <p>recipient: <span>charity Name</span></p>
+                                <p>pool date: <span>Coming Soon</span> | pool size: <span>10 eth</span></p>
+                                <p>recipient: <span>Coming Soon</span></p>
                             </li>
                             <li>
-                                <p>pool date: <span>december 20th, 2021</span> | pool size: <span>10 eth</span></p>
-                                <p>recipient: <span>charity Name</span></p>
+                                <p>pool date: <span>Coming Soon</span> | pool size: <span>10 eth</span></p>
+                                <p>recipient: <span>Coming Soon</span></p>
                             </li>
                         </ul>
                     </div>

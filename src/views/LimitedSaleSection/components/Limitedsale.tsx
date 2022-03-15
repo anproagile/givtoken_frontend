@@ -13,7 +13,7 @@ const Limitedsale = () => {
                         <div className="homepage__social">
                             <ul className="footer__social">
                                 <li>
-                                    <a href="https://discord.gg/dYuWzKd5">
+                                    <a href="https://discord.gg/4zDw4bGdke">
                                         <img src="img/discord.svg" alt="" />
                                     </a>
                                 </li>
