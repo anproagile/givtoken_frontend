@@ -12,10 +12,6 @@ import UserBlock from 'components/UserBlock'
 import useWindowSize from 'hooks/useWindowSize';
 import config from './config'
 
-import 'css/app.css'
-import 'css/app.min.css'
-
-
 
 
 const Header = () => {
@@ -100,10 +96,14 @@ const Header = () => {
             <div>
               <div className="logo logo--header">
                 <a className="logo__btn" href="/" onClick={e => onClickHeaderMenu(e, "/")}>
-                  <img src="img/logo.svg" alt="" />
+                  <img src="img/logo.png" alt="" />
                 </a>
               </div>
-              <div className="c-btn__wrapper"><a className="c-btn" href="/home" onClick={e => onClickHeaderMenu(e, "/home")}><span>THE GIVING pool</span></a></div>
+              <div className="c-btn__wrapper">
+                <a className="c-btn" href="/home" onClick={e => onClickHeaderMenu(e, "/")}>
+                  <span>THE GIVING POOL</span>
+                </a>
+              </div>
             </div>
             <div>
               <div className="hamburger hamburger--squeeze" role="button" hamburger-js="hamburger-js">
@@ -125,7 +125,7 @@ const Header = () => {
             <div className="header__wrapper-right">
               <div className="c-btn__wrapper">
                 <a className="c-btn" href="https://www.coinbase.com/price" rel="noreferrer" target="_blank"><span>chart</span></a>
-                <a className="c-btn" href="https://app.uniswap.org/" rel="noreferrer" target="_blank"><span>buy on uniswap</span>
+                <a className="c-btn" href="https://app.uniswap.org/" rel="noreferrer" target="_blank"><span>BUY NOW</span>
                 </a><a className="c-btn" href="/" onClick={e => onClickHeaderMenu(e, "/")}><span>Connect wallet</span>
                 </a>
               </div>
@@ -134,6 +134,46 @@ const Header = () => {
         </div>
       </div >
     </nav >
+
+    // <nav className="header" id="header">
+    //   <div className="c-grid-fluid">
+    //     <div className="header__wrapper">
+    //       <div className="header__wrapper-left">
+    //         <div>
+    //           <div className="logo logo--header">
+    //             <a className="logo__btn" href="/index.html">
+    //               <img src="img/logo.png" srcSet="img/logo@2x.png 2x" alt="" />
+    //             </a>
+    //           </div>
+    //           <div className="c-btn__wrapper"><a className="c-btn" href="/"><span>THE GIVING pool</span></a></div>
+    //         </div>
+    //         <div>
+    //           <div className="hamburger hamburger--squeeze" role="button" hamburger-js="hamburger-js">
+    //             <div className="hamburger-box">
+    //               <div className="hamburger-inner" />
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       <div className="header__wrapper-mobile" mobile-block-js>
+    //         <div className="header__wrapper-middle">
+    //           <nav className="header__nav">
+    //             <a href="/roadmap-1.html">Roadmap</a>
+    //             <a href="/whitepaper.html">WHITEPAPER</a>
+    //             <a href="/tokenomics.html">Tokenomics</a>
+    //           </nav>
+    //         </div>
+    //         <div className="header__wrapper-right">
+    //           <div className="c-btn__wrapper">
+    //             <a className="c-btn" href="/"><span>chart</span></a>
+    //             <a className="c-btn" href="/"><span>buy now</span></a>
+    //             <a className="c-btn" href="/"><span>Connect wallet</span></a>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </nav >
 
     // <Section>
     //   <ResetCSS />

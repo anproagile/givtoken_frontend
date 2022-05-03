@@ -12,10 +12,6 @@ import BackgroundMusic from 'components/BackgroundMusic'
 import usePersistConnect from 'hooks/usePersistConnect'
 import useBackgroundMusic from 'hooks/useBackgroundMusic';
 import history from './routerHistory'
-// import '${process.env.PUBLIC_URL}/css/app.css'
-// import 'css/app.min.css'
-import 'css/app.css'
-import 'css/app.min.css'
 
 const NotFound = lazy(() => import('./views/NotFound'))
 const Home = lazy(() => import('./views/Home'))
