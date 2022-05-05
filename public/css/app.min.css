@@ -1265,6 +1265,8 @@ picture {
 
 .landing__col-1,
 .landing__col-3 {
+    z-index: 3;
+    position: relative;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: center;
@@ -1292,6 +1294,7 @@ picture {
 }
 
 .landing__col-2 {
+    z-index: 0;
     position: relative;
     width: 100%;
     max-width: 210px;
@@ -1762,15 +1765,58 @@ picture {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: start;
-    align-items: flex-start
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 30px
+}
+
+@media screen and (max-width:1279px) {
+    .landing__stat {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+@media screen and (max-width:767px) {
+    .landing__stat {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap
+    }
+}
+
+.landing__stat>div {
+    position: relative;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 1px;
+    max-width: 100%;
+    height: 147px
+}
+
+@media screen and (max-width:767px) {
+    .landing__stat>div {
+        -ms-flex: 100%;
+        flex: 100%
+    }
 }
 
 .landing__stat svg {
+    -ms-transform: translate(-27%, -43%);
+    transform: translate(-27%, -43%);
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
-    max-width: 100%;
-    height: auto;
     margin-left: auto;
     margin-right: auto
+}
+
+@media screen and (max-width:767px) {
+    .landing__stat svg {
+        left: 50%;
+        -ms-transform: translate(-50%, -43%);
+        transform: translate(-50%, -43%)
+    }
 }
 
 .landing__stat-wrapper {
@@ -1780,6 +1826,7 @@ picture {
     align-items: center;
     -ms-flex-direction: column;
     flex-direction: column;
+    width: 100%;
     text-align: center;
     padding-left: 20px
 }
@@ -1791,6 +1838,8 @@ picture {
 }
 
 .landing__stat-title {
+    z-index: 2;
+    position: relative;
     font-weight: 900;
     font-size: 24px;
     line-height: 74px;
