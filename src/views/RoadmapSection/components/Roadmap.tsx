@@ -40,15 +40,13 @@ const Roadmap = () => {
                     </ul>
                     <p className="milestone__desc">detailed in the chart below, you will find the overview for each launch</p>
                     <div className="milestone__table-scroll-wrapper">
-                        <div className="milestone__table-scroll">
-                            <img className="milestone__table" src="img/img-milestone-1.png" srcSet="img/img-milestone-1@2x.png 2x" alt="" /></div>
+                        <div className="milestone__table-scroll"><img className="milestone__table" src="img/img-milestone-1.png" srcSet="img/img-milestone-1@2x.png 2x" alt="" /></div>
                     </div>
                     <p className="milestone__desc">The private sale for each period will run until the lot of GIV is fully sold or until each Limited Sale is closed.</p>
                     <p className="milestone__desc">For any tokens that remain unsold, they will be allocated to the company and/or team for future fundraising.</p>
                     <p className="milestone__desc">INITIAL LAUNCHED tokens are extremely limited  are available to select DATES/TIMES.</p>
                     <p className="milestone__desc">AFTER THE 10 SALES HOSTED ON THE WEBSITE, GIV WILL ONLY BE AVAILABLE TO TRADE ON uniSWAP USING THE TOKEN CONTRACT ADDRESS.</p>
-                    <h3 className="milestone__title">inital launch fees</h3>
-                    <img src="img/img-milestone-2.png" srcSet="img/img-milestone-2@2x.png 2x" alt="" />
+                    <h3 className="milestone__title">inital launch fees</h3><img src="img/img-milestone-2.png" srcSet="img/img-milestone-2@2x.png 2x" alt="" />
                     <p className="milestone__desc">during the INITIAL 10 launches:</p>
                     <p className="milestone__desc">each sale will include the original transactional fee mentioned in the tokenomics, along with an additional 5% Developers fee.</p>
                     <p className="milestone__desc">the ETH collected from the developer fee will be used to sustain the project throughout launch and help fund future developments for the giving platform.</p>
