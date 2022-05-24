@@ -2010,8 +2010,9 @@ picture {
 
 @media screen and (max-width: 767px) {
   .landing__stat {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    /* -ms-flex-wrap: wrap;
+    flex-wrap: wrap; */
+    flex-wrap: flex;
   }
 }
 
@@ -2100,8 +2101,9 @@ picture {
 
 @media screen and (max-width: 767px) {
   .landing__vote {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    /* -ms-flex-wrap: wrap;
+    flex-wrap: wrap; */
+    flex-wrap: flex;
   }
 
   .landing__vote>div {

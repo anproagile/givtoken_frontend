@@ -85,7 +85,6 @@ const Header = () => {
     e.preventDefault();
     setActiveMemu(link);
     history.push(link);
-
   }
 
   return (
@@ -125,7 +124,7 @@ const Header = () => {
             <div className="header__wrapper-right">
               <div className="c-btn__wrapper">
                 <a className="c-btn" href="https://www.coinbase.com/price" rel="noreferrer" target="_blank"><span>chart</span></a>
-                <a className="c-btn" href="https://app.uniswap.org/" rel="noreferrer" target="_blank"><span>BUY NOW</span>
+                <a className="c-btn" href="https://app.thegivingpool.io/" rel="noreferrer" target="_blank"><span>BUY NOW</span>
                 </a><a className="c-btn" href="/" onClick={e => onClickHeaderMenu(e, "/")}><span>Connect wallet</span>
                 </a>
               </div>
